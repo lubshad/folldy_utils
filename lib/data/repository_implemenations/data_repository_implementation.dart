@@ -218,4 +218,9 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, Map<String, dynamic>>> getBatchDetails(Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.getBatchDetails(map));
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> getSubjectDetails(Map<String, dynamic> map)async {
+    return exceptionHandler(_remoteDataSource.getSubjectDetails(map));
+  }
 }

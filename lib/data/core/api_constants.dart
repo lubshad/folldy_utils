@@ -53,4 +53,5 @@ class ApiConstants {
   static const String addEditBatch = "add_edit_batch";
   static const String listInstitutionBatches  = "list_institution_batches";
   static const String getBatchDetails  = "batch_details";
+  static const String getSubjectDetails  = "subject_details";
 }

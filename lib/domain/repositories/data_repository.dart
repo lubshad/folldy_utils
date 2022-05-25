@@ -105,4 +105,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> getBatchDetails(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> getSubjectDetails(
+      Map<String, dynamic> map);
 }
