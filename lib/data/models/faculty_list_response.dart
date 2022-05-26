@@ -23,13 +23,13 @@ class Faculty {
   final String phone;
   final int institution;
 
-  factory Faculty.fromJson(Map<String, dynamic> json) =>
-      Faculty(id: json["id"], name: json["name"], phone: json["phone"] , institution: json["institution"]);
+  factory Faculty.fromJson(Map<String, dynamic> json) => Faculty(
+      id: json["id"],
+      name: json["username"],
+      phone: json["phone"],
+      institution: json["institution"]);
 
   Map<String, dynamic> toJson() => {
-        "institution": institution,
         "id": id,
-        "name": name,
-        "phone": phone,
       };
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 
 class ApiConstants {
+
+
   ApiConstants._();
 
   // local
@@ -16,7 +18,7 @@ class ApiConstants {
   static String presentationViewerUrl =
       kDebugMode ? "$domainUrl:8003/" : "$domainUrl/presentation_view/";
 
-  static const String slugUrl = "/folldy_utils/api/";
+  static const String slugUrl = "/folldy_admin/api/";
   static const String addUniversity = "university_add";
   static const String listAllAreas = "area_list";
   static const String addNewArea = "area_add";
@@ -54,4 +56,7 @@ class ApiConstants {
   static const String listInstitutionBatches  = "list_institution_batches";
   static const String getBatchDetails  = "batch_details";
   static const String getSubjectDetails  = "subject_details";
+  static const String institutionFacultyLogin  = "institution_faculty_login";
+  static const String assignSubjectToFaculty  = "assign_subject_to_faculty";
+  static const String getFacultyDashboard  = "faculty_dashboard";
 }

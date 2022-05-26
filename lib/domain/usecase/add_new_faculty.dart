@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:basic_template/basic_template.dart';
 
@@ -30,23 +29,9 @@ class AddFacultyParams {
   Map<String, dynamic> toMap() {
     return {
       "institution": institution,
-      'name': name,
+      'username': name,
       'phone': phone,
       'id': id,
     };
   }
-
-  factory AddFacultyParams.fromMap(Map<String, dynamic> map) {
-    return AddFacultyParams(
-      institution: map["institution"],
-      name: map['name'] ?? '',
-      phone: map['phone'] ?? '',
-      id: map['id']?.toInt(),
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory AddFacultyParams.fromJson(String source) =>
-      AddFacultyParams.fromMap(json.decode(source));
 }

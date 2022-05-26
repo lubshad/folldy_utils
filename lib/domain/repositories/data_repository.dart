@@ -108,4 +108,13 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> getSubjectDetails(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> institutionFacultyLogin(
+      Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> assignSubjectToFaculty(
+      Map<String, dynamic> map);
+
+  Future<Either<AppError, dynamic>> getFacultyDashboard(
+      Map<String, dynamic> map);
 }

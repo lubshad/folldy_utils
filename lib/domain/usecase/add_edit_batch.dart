@@ -26,7 +26,7 @@ class AddEditBatchParams {
       required this.batchName,
       required this.courseId,
       required this.institutionId,
-      required this.id});
+      this.id});
 
   Map<String, dynamic> toMap() {
     return {

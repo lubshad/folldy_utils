@@ -84,6 +84,12 @@ abstract class RemoteDataSource {
   FutureOr getBatchDetails(Map<String, dynamic> map);
 
   FutureOr getSubjectDetails(Map<String, dynamic> map);
+
+  FutureOr institutionFacultyLogin(Map<String, dynamic> map);
+
+  FutureOr assignSubjectToFaculty(Map<String, dynamic> map);
+
+  FutureOr getFacultyDashboard(Map<String, dynamic> map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -326,10 +332,31 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = _apiClient.post(ApiConstants.getBatchDetails, map);
     return response;
   }
-  
+
   @override
   FutureOr getSubjectDetails(Map<String, dynamic> map) async {
     final response = _apiClient.post(ApiConstants.getSubjectDetails, map);
+    return response;
+  }
+
+  @override
+  FutureOr institutionFacultyLogin(Map<String, dynamic> map) async {
+    final response =
+        await _apiClient.post(ApiConstants.institutionFacultyLogin, map);
+    return response;
+  }
+
+  @override
+  FutureOr assignSubjectToFaculty(Map<String, dynamic> map) async {
+    final response =
+        await _apiClient.post(ApiConstants.assignSubjectToFaculty, map);
+    return response;
+  }
+
+  @override
+  FutureOr getFacultyDashboard(Map<String, dynamic> map) async {
+    final response =
+        await _apiClient.post(ApiConstants.getFacultyDashboard, map);
     return response;
   }
 }
