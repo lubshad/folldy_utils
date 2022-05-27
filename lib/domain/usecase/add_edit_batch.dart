@@ -14,6 +14,7 @@ class AddEditBatch extends UseCase<Map<String, dynamic>, AddEditBatchParams> {
   }
 }
 
+
 class AddEditBatchParams {
   final DateTimeRange duration;
   final String batchName;
