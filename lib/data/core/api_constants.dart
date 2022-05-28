@@ -59,4 +59,5 @@ class ApiConstants {
   static const String institutionFacultyLogin  = "institution_faculty_login";
   static const String assignSubjectToFaculty  = "assign_subject_to_faculty";
   static const String getFacultyDashboard  = "faculty_dashboard";
+  static const String getAllPages  = "get_all_pages";
 }

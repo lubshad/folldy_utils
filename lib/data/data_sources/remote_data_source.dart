@@ -90,6 +90,8 @@ abstract class RemoteDataSource {
   FutureOr assignSubjectToFaculty(Map<String, dynamic> map);
 
   FutureOr getFacultyDashboard(Map<String, dynamic> map);
+
+  FutureOr getAllPages(Map<String, dynamic> json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -357,6 +359,13 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   FutureOr getFacultyDashboard(Map<String, dynamic> map) async {
     final response =
         await _apiClient.post(ApiConstants.getFacultyDashboard, map);
+    return response;
+  }
+  
+  @override
+  FutureOr getAllPages(Map<String, dynamic> json) async {
+     final response =
+        await _apiClient.post(ApiConstants.getAllPages, json);
     return response;
   }
 }

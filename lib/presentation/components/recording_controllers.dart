@@ -1,52 +1,52 @@
 import 'package:basic_template/basic_template.dart';
 import 'package:flutter/material.dart';
+import 'package:folldy_utils/data/models/recording_state.dart';
 
 import '../../utils/constants.dart';
 
 class RecordingControlls extends StatelessWidget {
   const RecordingControlls({
     Key? key,
-    required this.startStopRecordingTougle,
-    required this.pauseResumeRecordingTougle,
-    required this.recordingDuration,
-    required this.isPaused,
-    required this.isRecording,
+    required this.startRecording,
+    required this.stopRecording,
+    required this.pauseRecording,
+    required this.resumeRecording,
+    required this.recordingState,
   }) : super(key: key);
-  final VoidCallback startStopRecordingTougle;
-  final VoidCallback pauseResumeRecordingTougle;
-  final Stream<Duration> recordingDuration;
-  final bool isPaused;
-  final bool isRecording;
+  final VoidCallback startRecording;
+  final VoidCallback stopRecording;
+  final VoidCallback pauseRecording;
+  final VoidCallback resumeRecording;
+  final RecordingState recordingState;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        if (!isRecording)
+        if (!recordingState.isRecording)
           ElevatedButton.icon(
-              onPressed: startStopRecordingTougle,
-              icon: const Icon(Icons.keyboard_voice_outlined),
+              onPressed: startRecording,
+              icon: const Icon(Icons.videocam_rounded),
               label: const Text("Start Recording")),
-        if (isRecording)
+        if (recordingState.isRecording)
           ElevatedButton.icon(
-              onPressed: pauseResumeRecordingTougle,
+              onPressed:
+                  recordingState.isPaused ? resumeRecording : pauseRecording,
               icon: Row(
                 children: [
-                  StreamBuilder<Duration>(
-                      stream: recordingDuration,
-                      builder: (context, snapshot) {
-                        return Text(
-                            durationToMs(snapshot.data ?? Duration.zero));
-                      }),
+                  Text(durationToMs(recordingState.recordedDuration)),
                   defaultSpacerHorizontalTiny,
-                  Icon(isPaused ? Icons.keyboard_voice_outlined : Icons.pause),
+                  Icon(recordingState.isPaused
+                      ? Icons.keyboard_voice_outlined
+                      : Icons.pause),
                 ],
               ),
-              label: Text(isPaused ? "Resume Recording" : "Pause Recording")),
-        if (isRecording)
-          IconButton(
-              onPressed: startStopRecordingTougle, icon: const Icon(Icons.stop))
+              label: Text(recordingState.isPaused
+                  ? "Resume Recording"
+                  : "Pause Recording")),
+        if (recordingState.isRecording)
+          IconButton(onPressed: stopRecording, icon: const Icon(Icons.stop))
       ],
     );
   }

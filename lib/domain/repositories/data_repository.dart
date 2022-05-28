@@ -117,4 +117,6 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> getFacultyDashboard(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, dynamic>> getAllPages(Map<String, dynamic> json);
 }

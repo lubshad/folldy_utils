@@ -239,4 +239,10 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> getFacultyDashboard(Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.getFacultyDashboard(map));
   }
+  
+  @override
+  Future<Either<AppError, dynamic>> getAllPages(Map<String, dynamic> json) async {
+    return await exceptionHandler(_remoteDataSource.getAllPages(json));
+
+  }
 }
