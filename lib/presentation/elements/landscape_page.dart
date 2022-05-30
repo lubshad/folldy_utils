@@ -6,13 +6,13 @@ class LandscapePage extends StatelessWidget {
   const LandscapePage(
       {Key? key,
       required this.item,
-      required this.handleOnTap,
-      required this.baseUrl})
+      required this.onTap,
+      required this.domainUrl})
       : super(key: key);
 
   final Map<String, dynamic> item;
-  final Function(dynamic) handleOnTap;
-  final String baseUrl;
+  final Function(Map<String ,dynamic>) onTap;
+  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class LandscapePage extends StatelessWidget {
           image: item["backgroundImage"] == null
               ? null
               : DecorationImage(
-                  image: CachedNetworkImageProvider(baseUrl + item["backgroundImage"]),
+                  image: CachedNetworkImageProvider(domainUrl + item["backgroundImage"]),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
           border: Border.all(color: Colors.black87)),
@@ -39,9 +39,9 @@ class LandscapePage extends StatelessWidget {
                   width: e["width"],
                   child: GestureDetector(
                     onTap: e["hidden"] != true && e["topic"] == true
-                        ? () => handleOnTap(e)
+                        ? () => onTap(e)
                         : null,
-                    child: getPresentationItem(e, baseUrl: baseUrl),
+                    child: PresentationItem(item : e, domainUrl: domainUrl , onTap: onTap),
                   )))
               .toList(),
         );

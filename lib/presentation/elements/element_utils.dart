@@ -7,32 +7,48 @@ import 'package:folldy_utils/presentation/elements/text_element.dart';
 
 import 'landscape_page.dart';
 
-Widget getPresentationItem(dynamic item,
-    {Function(dynamic)? handleOnTap , String? baseUrl}) {
-  ElementType elementType = ElementType.values[item["type"]];
+class PresentationItem extends StatelessWidget {
+  const PresentationItem(
+      {Key? key, required this.item, this.onTap, required this.domainUrl , this.previousPage, this.nextPage})
+      : super(key: key);
 
-  switch (elementType) {
-    case ElementType.text:
-      return TextElementPresnetation(text: item);
-    case ElementType.portraitPage:
-      return PortraitPage(item: item, handleOnTap: handleOnTap! , baseUrl: baseUrl!);
-    case ElementType.landscapePage:
-      return LandscapePage(handleOnTap: handleOnTap!, item: item , baseUrl: baseUrl!);
-    case ElementType.rectangle:
-      return Container(
-        decoration: BoxDecoration(
-          color: Color(item["color"]),
-        ),
-      );
-    case ElementType.circle:
-      return Container(
-        decoration:
-            BoxDecoration(color: Color(item["color"]), shape: BoxShape.circle),
-      );
-    case ElementType.svg:
-      return SvgPicture.network(item["svg"]);
-    case ElementType.pngText:
-      return PngTextElement(item: item, baseUrl: baseUrl!);
+  final Map<String, dynamic> item;
+  final Function(Map<String, dynamic> item)? onTap;
+  final String domainUrl;
+  final VoidCallback? previousPage;
+  final VoidCallback? nextPage;
+
+  @override
+  Widget build(BuildContext context) {
+    ElementType elementType = ElementType.values[item["type"]];
+    switch (elementType) {
+      case ElementType.text:
+        return TextElementPresnetation(text: item);
+      case ElementType.portraitPage:
+        return PortraitPage(
+          item: item,
+          onTap: onTap!,
+          domainUrl: domainUrl,
+          previousPage: previousPage!,
+          nextPage: nextPage!,
+        );
+      case ElementType.landscapePage:
+        return LandscapePage(onTap: onTap!, item: item, domainUrl: domainUrl);
+      case ElementType.rectangle:
+        return Container(
+          decoration: BoxDecoration(
+            color: Color(item["color"]),
+          ),
+        );
+      case ElementType.circle:
+        return Container(
+          decoration: BoxDecoration(
+              color: Color(item["color"]), shape: BoxShape.circle),
+        );
+      case ElementType.svg:
+        return SvgPicture.network(item["svg"]);
+      case ElementType.pngText:
+        return PngTextElement(item: item, domainUrl: domainUrl);
+    }
   }
 }
-

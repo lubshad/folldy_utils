@@ -2,16 +2,23 @@ import 'package:basic_template/basic_template.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/presentation/elements/element_utils.dart';
 
+
+
+
 class PortraitPage extends StatelessWidget {
   const PortraitPage({
     Key? key,
     required this.item,
-    required this.handleOnTap,
-    required this.baseUrl,
+    required this.onTap,
+    required this.domainUrl,
+    required this.previousPage,
+    required this.nextPage,
   }) : super(key: key);
   final Map<String, dynamic> item;
-  final Function(dynamic) handleOnTap;
-  final String baseUrl;
+  final Function(Map<String, dynamic> item) onTap;
+  final String domainUrl;
+  final VoidCallback previousPage;
+  final VoidCallback nextPage;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +27,8 @@ class PortraitPage extends StatelessWidget {
         image: item["backgroundImage"] == null
             ? null
             : DecorationImage(
-                image: CachedNetworkImageProvider(baseUrl + item["backgroundImage"]),
+                image: CachedNetworkImageProvider(
+                    domainUrl + item["backgroundImage"]),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
         // border: Border.all(color: Colors.black87)
@@ -32,31 +40,29 @@ class PortraitPage extends StatelessWidget {
         return Stack(
             // clipBehavior: Clip.none,
             children: [
-              // FractionallySizedBox(
-              //   widthFactor: 1,
-              //   heightFactor: 1,
-              //   alignment: Alignment.topLeft,
-              //   child: Row(
-              //     children: [
-              //       Expanded(
-              //           child: GestureDetector(
-              //               onTap: Get.find<PresentationViewController>()
-              //                   .previousPage,
-              //               child: Container(
-              //                 color: Colors.transparent,
-              //                 width: double.infinity,
-              //               ))),
-              //       Expanded(
-              //           child: GestureDetector(
-              //               onTap:
-              //                   Get.find<PresentationViewController>().nextPage,
-              //               child: Container(
-              //                 color: Colors.transparent,
-              //                 width: double.infinity,
-              //               ))),
-              //     ],
-              //   ),
-              // ),
+              FractionallySizedBox(
+                widthFactor: 1,
+                heightFactor: 1,
+                alignment: Alignment.topLeft,
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: GestureDetector(
+                            onTap: previousPage,
+                            child: Container(
+                              color: Colors.transparent,
+                              width: double.infinity,
+                            ))),
+                    Expanded(
+                        child: GestureDetector(
+                            onTap: nextPage,
+                            child: Container(
+                              color: Colors.transparent,
+                              width: double.infinity,
+                            ))),
+                  ],
+                ),
+              ),
               ...items
                   .map((e) => Positioned(
                       top: e["top"],
@@ -65,9 +71,9 @@ class PortraitPage extends StatelessWidget {
                       width: e["width"],
                       child: GestureDetector(
                         onTap: e["hidden"] != true && e["topic"] == true
-                            ? () => handleOnTap(e)
+                            ? () => onTap(e)
                             : null,
-                        child: getPresentationItem(e, baseUrl: baseUrl),
+                        child: PresentationItem(item: e, domainUrl: domainUrl),
                       )))
                   .toList(),
             ]);
