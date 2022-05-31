@@ -245,4 +245,9 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.getAllPages(json));
 
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> getAllRecordedPresentations(json) async {
+    return await exceptionHandler(_remoteDataSource.getAllRecordedPresentations(json));
+  }
 }

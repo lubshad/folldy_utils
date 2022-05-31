@@ -119,4 +119,7 @@ abstract class DataRepository {
       Map<String, dynamic> map);
 
   Future<Either<AppError, dynamic>> getAllPages(Map<String, dynamic> json);
+
+  Future<Either<AppError, Map<String, dynamic>>> getAllRecordedPresentations(
+      json);
 }
