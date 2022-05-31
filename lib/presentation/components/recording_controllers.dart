@@ -22,7 +22,7 @@ class RecordingControlls extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return recordingState.isProcessing
-        ? Center(child: CircularProgressIndicator())
+        ? const Center(child: CircularProgressIndicator())
         : Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

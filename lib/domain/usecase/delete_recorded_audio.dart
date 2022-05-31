@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:basic_template/basic_template.dart';
 
 import 'package:folldy_utils/domain/repositories/data_repository.dart';
