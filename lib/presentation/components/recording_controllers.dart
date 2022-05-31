@@ -21,33 +21,37 @@ class RecordingControlls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        if (!recordingState.isRecording)
-          ElevatedButton.icon(
-              onPressed: startRecording,
-              icon: const Icon(Icons.videocam_rounded),
-              label: const Text("Start Recording")),
-        if (recordingState.isRecording)
-          ElevatedButton.icon(
-              onPressed:
-                  recordingState.isPaused ? resumeRecording : pauseRecording,
-              icon: Row(
-                children: [
-                  Text(durationToMs(recordingState.recordedDuration)),
-                  defaultSpacerHorizontalTiny,
-                  Icon(recordingState.isPaused
-                      ? Icons.keyboard_voice_outlined
-                      : Icons.pause),
-                ],
-              ),
-              label: Text(recordingState.isPaused
-                  ? "Resume Recording"
-                  : "Pause Recording")),
-        if (recordingState.isRecording)
-          IconButton(onPressed: stopRecording, icon: const Icon(Icons.stop))
-      ],
-    );
+    return recordingState.isProcessing
+        ? Center(child: CircularProgressIndicator())
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              if (!recordingState.isRecording)
+                ElevatedButton.icon(
+                    onPressed: startRecording,
+                    icon: const Icon(Icons.videocam_rounded),
+                    label: const Text("Start Recording")),
+              if (recordingState.isRecording)
+                ElevatedButton.icon(
+                    onPressed: recordingState.isPaused
+                        ? resumeRecording
+                        : pauseRecording,
+                    icon: Row(
+                      children: [
+                        Text(durationToMs(recordingState.recordedDuration)),
+                        defaultSpacerHorizontalTiny,
+                        Icon(recordingState.isPaused
+                            ? Icons.keyboard_voice_outlined
+                            : Icons.pause),
+                      ],
+                    ),
+                    label: Text(recordingState.isPaused
+                        ? "Resume Recording"
+                        : "Pause Recording")),
+              if (recordingState.isRecording)
+                IconButton(
+                    onPressed: stopRecording, icon: const Icon(Icons.stop))
+            ],
+          );
   }
 }

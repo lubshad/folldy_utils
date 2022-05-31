@@ -94,6 +94,8 @@ abstract class RemoteDataSource {
   FutureOr getAllPages(Map<String, dynamic> json);
 
   FutureOr getAllRecordedPresentations(json);
+
+  FutureOr deleteRecordedAudio(Map<String, dynamic> map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -369,10 +371,18 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.getAllPages, json);
     return response;
   }
-  
+
   @override
   FutureOr getAllRecordedPresentations(json) async {
-    final response = await _apiClient.post(ApiConstants.getAllRecordedPresentations, json);
+    final response =
+        await _apiClient.post(ApiConstants.getAllRecordedPresentations, json);
+    return response;
+  }
+  
+  @override
+  FutureOr deleteRecordedAudio(Map<String, dynamic> map) async {
+    final response =
+        await _apiClient.post(ApiConstants.deleteRecordedAudio, map);
     return response;
   }
 }

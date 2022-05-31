@@ -122,4 +122,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> getAllRecordedPresentations(
       json);
+
+  Future<Either<AppError, Map<String, dynamic>>> deleteRecordedAudio(
+      Map<String, dynamic> map);
 }
