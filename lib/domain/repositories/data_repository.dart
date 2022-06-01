@@ -100,7 +100,7 @@ abstract class DataRepository {
   Future<Either<AppError, Map<String, dynamic>>> addEditBatch(
       Map<String, dynamic> map);
 
-  Future<Either<AppError, List<Batch>>> listInstitutionBatches(
+  Future<Either<AppError, Map<String ,dynamic>>> listInstitutionBatches(
       Map<String, dynamic> map);
 
   Future<Either<AppError, Map<String, dynamic>>> getBatchDetails(

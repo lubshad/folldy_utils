@@ -209,7 +209,7 @@ class DataRepositoryImplementation extends DataRepository
   }
   
   @override
-  Future<Either<AppError, List<Batch>>> listInstitutionBatches(Map<String, dynamic> map)async {
+  Future<Either<AppError, Map<String ,dynamic>>> listInstitutionBatches(Map<String, dynamic> map)async {
     return await exceptionHandler(_remoteDataSource.listInstitutionBatches(map));
     
   }

@@ -3,7 +3,6 @@ class Batch {
   final String name;
   final DateTime start;
   final DateTime end;
-  // final Course course;
 
   Batch(
       {required this.id,
@@ -17,7 +16,6 @@ class Batch {
       'name': name,
       'start': start.millisecondsSinceEpoch,
       'end': end.millisecondsSinceEpoch,
-      // 'course': course.toJson(),
     };
   }
 
@@ -27,7 +25,6 @@ class Batch {
       name: map['name'] ?? '',
       start: DateTime.parse(map["start"]),
       end: DateTime.parse(map["end"]),
-      // course: Course.fromJson(map["course"]),
     );
   }
 

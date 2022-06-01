@@ -327,10 +327,10 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   }
 
   @override
-  FutureOr<List<Batch>> listInstitutionBatches(Map<String, dynamic> map) async {
+  FutureOr<Map<String ,dynamic>> listInstitutionBatches(Map<String, dynamic> map) async {
     final response =
         await _apiClient.post(ApiConstants.listInstitutionBatches, map);
-    return Batch.fromJson(response);
+    return response;
   }
 
   @override
@@ -378,7 +378,7 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         await _apiClient.post(ApiConstants.getAllRecordedPresentations, json);
     return response;
   }
-  
+
   @override
   FutureOr deleteRecordedAudio(Map<String, dynamic> map) async {
     final response =
