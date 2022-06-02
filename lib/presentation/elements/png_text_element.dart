@@ -82,3 +82,37 @@ class GalleryImageElement extends StatelessWidget {
             })));
   }
 }
+
+class PngTextElementThumbnail extends StatelessWidget {
+  const PngTextElementThumbnail(
+      {Key? key, required this.item, required this.domainUrl})
+      : super(key: key);
+  final Map<String, dynamic> item;
+  final String domainUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return Builder(builder: (context) {
+      return Stack(
+        fit: StackFit.expand,
+        children: [
+          if (item["png"] != null)
+            CachedNetworkImage(
+              imageUrl: domainUrl + item["png"],
+              fit: BoxFit.values[item["fit"]],
+            ),
+          if (item["child"] != null)
+            Positioned(
+                top: item["child"]["top"],
+                left: item["child"]["left"],
+                height: item["child"]["height"],
+                width: item["child"]["width"],
+                child: PresentationItem(
+                  item: item["child"],
+                  domainUrl: domainUrl,
+                )),
+        ],
+      );
+    });
+  }
+}
