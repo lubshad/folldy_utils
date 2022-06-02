@@ -1,6 +1,5 @@
 import 'package:basic_template/basic_template.dart';
 import 'package:folldy_utils/data/models/area_list_response.dart';
-import 'package:folldy_utils/data/models/batch_list_response.dart';
 import 'package:folldy_utils/data/models/chapter_list_response.dart';
 import 'package:folldy_utils/data/models/course_list_response.dart';
 import 'package:folldy_utils/data/models/institution_list_response.dart';
@@ -202,57 +201,67 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.addFaculty(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> addEditBatch(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> addEditBatch(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.addEditBatch(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String ,dynamic>>> listInstitutionBatches(Map<String, dynamic> map)async {
-    return await exceptionHandler(_remoteDataSource.listInstitutionBatches(map));
-    
+  Future<Either<AppError, Map<String, dynamic>>> listInstitutionBatches(
+      Map<String, dynamic> map) async {
+    return await exceptionHandler(
+        _remoteDataSource.listInstitutionBatches(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> getBatchDetails(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> getBatchDetails(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.getBatchDetails(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> getSubjectDetails(Map<String, dynamic> map)async {
+  Future<Either<AppError, Map<String, dynamic>>> getSubjectDetails(
+      Map<String, dynamic> map) async {
     return exceptionHandler(_remoteDataSource.getSubjectDetails(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> institutionFacultyLogin(Map<String, dynamic> map)async {
+  Future<Either<AppError, Map<String, dynamic>>> institutionFacultyLogin(
+      Map<String, dynamic> map) async {
     return exceptionHandler(_remoteDataSource.institutionFacultyLogin(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> assignSubjectToFaculty(Map<String, dynamic> map) async {
-    return await exceptionHandler(_remoteDataSource.assignSubjectToFaculty(map));
-    
+  Future<Either<AppError, Map<String, dynamic>>> assignSubjectToFaculty(
+      Map<String, dynamic> map) async {
+    return await exceptionHandler(
+        _remoteDataSource.assignSubjectToFaculty(map));
   }
-  
+
   @override
-  Future<Either<AppError, dynamic>> getFacultyDashboard(Map<String, dynamic> map) async {
+  Future<Either<AppError, dynamic>> getFacultyDashboard(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.getFacultyDashboard(map));
   }
-  
-  @override
-  Future<Either<AppError, dynamic>> getAllPages(Map<String, dynamic> json) async {
-    return await exceptionHandler(_remoteDataSource.getAllPages(json));
 
-  }
-  
   @override
-  Future<Either<AppError, Map<String, dynamic>>> getAllRecordedPresentations(json) async {
-    return await exceptionHandler(_remoteDataSource.getAllRecordedPresentations(json));
+  Future<Either<AppError, dynamic>> getAllPages(
+      Map<String, dynamic> json) async {
+    return await exceptionHandler(_remoteDataSource.getAllPages(json));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> deleteRecordedAudio(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> getAllRecordedPresentations(
+      json) async {
+    return await exceptionHandler(
+        _remoteDataSource.getAllRecordedPresentations(json));
+  }
+
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> deleteRecordedAudio(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.deleteRecordedAudio(map));
   }
 }

@@ -11,7 +11,6 @@ import 'package:folldy_utils/data/models/topic_list_response.dart';
 import 'package:folldy_utils/data/models/university_list_response.dart';
 
 import '../core/api_constants.dart';
-import '../models/batch_list_response.dart';
 
 abstract class RemoteDataSource {
   Future<Map<String, dynamic>> addUniversity(Map<String, dynamic> params);
@@ -327,7 +326,8 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   }
 
   @override
-  FutureOr<Map<String ,dynamic>> listInstitutionBatches(Map<String, dynamic> map) async {
+  FutureOr<Map<String, dynamic>> listInstitutionBatches(
+      Map<String, dynamic> map) async {
     final response =
         await _apiClient.post(ApiConstants.listInstitutionBatches, map);
     return response;

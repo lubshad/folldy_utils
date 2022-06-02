@@ -1,5 +1,4 @@
 import 'package:folldy_utils/data/models/area_list_response.dart';
-import 'package:folldy_utils/data/models/batch_list_response.dart';
 import 'package:folldy_utils/data/models/chapter_list_response.dart';
 import 'package:folldy_utils/data/models/course_list_response.dart';
 import 'package:folldy_utils/data/models/institution_list_response.dart';
@@ -100,7 +99,7 @@ abstract class DataRepository {
   Future<Either<AppError, Map<String, dynamic>>> addEditBatch(
       Map<String, dynamic> map);
 
-  Future<Either<AppError, Map<String ,dynamic>>> listInstitutionBatches(
+  Future<Either<AppError, Map<String, dynamic>>> listInstitutionBatches(
       Map<String, dynamic> map);
 
   Future<Either<AppError, Map<String, dynamic>>> getBatchDetails(
