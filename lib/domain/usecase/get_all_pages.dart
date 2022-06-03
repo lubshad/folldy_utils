@@ -6,7 +6,7 @@ import '../repositories/data_repository.dart';
 
 
 class GetAllPagesArguments {
-  final String presentationId;
+  final int presentationId;
 
   GetAllPagesArguments(this.presentationId);
 
