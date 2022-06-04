@@ -264,4 +264,10 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.deleteRecordedAudio(map));
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> changeLiveSemester(Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.changeLiveSemester(map));
+    
+  }
 }

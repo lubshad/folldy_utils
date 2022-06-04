@@ -124,4 +124,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> deleteRecordedAudio(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> changeLiveSemester(
+      Map<String, dynamic> map);
 }

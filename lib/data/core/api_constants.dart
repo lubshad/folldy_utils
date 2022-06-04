@@ -62,4 +62,5 @@ class ApiConstants {
   static const String getAllPages  = "get_all_pages";
   static const String getAllRecordedPresentations  = "get_all_recorded_presentations";
   static const String deleteRecordedAudio = "delete_recorded_audio";
+  static const String changeLiveSemester = "change_live_semester";
 }
