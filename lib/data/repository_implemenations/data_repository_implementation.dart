@@ -270,4 +270,9 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.changeLiveSemester(map));
     
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> addPresentationToWall(Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.addPresentationToWall(map));
+  }
 }
