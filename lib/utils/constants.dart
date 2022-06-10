@@ -18,3 +18,6 @@ const defaultSpacerHorizontal = SizedBox(width: defaultPadding);
 const defaultSpacerHorizontalLarge = SizedBox(width: defaultPaddingLarge);
 const defaultSpacerHorizontalSmall = SizedBox(width: defaultPaddingSmall);
 const defaultSpacerHorizontalTiny = SizedBox(width: defaultPaddingTiny);
+
+
+const opaqueBlack = Color.fromARGB(127, 32, 32, 32);
