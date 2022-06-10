@@ -1,6 +1,9 @@
+
+
 import 'package:basic_template/basic_template.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/presentation/elements/element_utils.dart';
+
 
 class LandscapePage extends StatelessWidget {
   const LandscapePage(
@@ -22,7 +25,8 @@ class LandscapePage extends StatelessWidget {
               ? null
               : DecorationImage(
                   image: CachedNetworkImageProvider(
-                      domainUrl + item["backgroundImage"]),
+                      domainUrl + item["backgroundImage"],
+                      cacheManager: Get.find<CacheManager>()),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
           border: Border.all(color: Colors.black87)),
@@ -68,7 +72,7 @@ class LandscapeThumbnail extends StatelessWidget {
               ? null
               : DecorationImage(
                   image: CachedNetworkImageProvider(
-                      domainUrl + item["backgroundImage"]),
+                      domainUrl + item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
           border: Border.all(color: Colors.black87)),

@@ -24,6 +24,7 @@ class PngTextElement extends StatelessWidget {
                     CachedNetworkImage(
                       imageUrl: domainUrl + item["png"],
                       fit: BoxFit.values[item["fit"]],
+                      cacheManager: Get.find<CacheManager>(),
                     ),
                   if (item["child"] != null)
                     Positioned(
@@ -56,6 +57,7 @@ class GalleryImageElement extends StatelessWidget {
         closedBuilder: (context, action) => CachedNetworkImage(
               imageUrl: domainUrl + item["png"],
               fit: BoxFit.values[item["fit"]],
+              cacheManager: Get.find<CacheManager>(),
             ),
         openBuilder: ((context, action) => Builder(builder: (context) {
               Size size = MediaQuery.of(context).size;
@@ -70,6 +72,7 @@ class GalleryImageElement extends StatelessWidget {
                     CachedNetworkImage(
                       imageUrl: domainUrl + item["png"],
                       fit: BoxFit.values[item["fit"]],
+                      cacheManager: Get.find<CacheManager>(),
                     ),
                     Positioned(
                         top: defaultPadding,
@@ -100,6 +103,7 @@ class PngTextElementThumbnail extends StatelessWidget {
             CachedNetworkImage(
               imageUrl: domainUrl + item["png"],
               fit: BoxFit.values[item["fit"]],
+              cacheManager: Get.find<CacheManager>(),
             ),
           if (item["child"] != null)
             Positioned(

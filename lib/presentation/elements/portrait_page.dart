@@ -28,7 +28,7 @@ class PortraitPage extends StatelessWidget {
             ? null
             : DecorationImage(
                 image: CachedNetworkImageProvider(
-                    domainUrl + item["backgroundImage"]),
+                    domainUrl + item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
         // border: Border.all(color: Colors.black87)
@@ -101,7 +101,7 @@ class PortraitThumbnail extends StatelessWidget {
             ? null
             : DecorationImage(
                 image: CachedNetworkImageProvider(
-                    domainUrl + item["backgroundImage"]),
+                    domainUrl + item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
         // border: Border.all(color: Colors.black87)
