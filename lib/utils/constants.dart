@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 const defaultAnimationDuration = Duration(milliseconds: 300);
 const defaultAnimationDurationSmall = Duration(milliseconds: 100);
 
@@ -19,5 +18,4 @@ const defaultSpacerHorizontalLarge = SizedBox(width: defaultPaddingLarge);
 const defaultSpacerHorizontalSmall = SizedBox(width: defaultPaddingSmall);
 const defaultSpacerHorizontalTiny = SizedBox(width: defaultPaddingTiny);
 
-
-const opaqueBlack = Color.fromARGB(127, 32, 32, 32);
+const opaqueBlack = Color.fromARGB(80, 32, 32, 32);
