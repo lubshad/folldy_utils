@@ -99,6 +99,8 @@ abstract class RemoteDataSource {
   FutureOr changeLiveSemester(Map<String, dynamic> map);
 
   FutureOr addPresentationToWall(Map<String, dynamic> map);
+
+  FutureOr addTeachersToBatch(Map<String, dynamic> map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -396,11 +398,18 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         await _apiClient.post(ApiConstants.changeLiveSemester, map);
     return response;
   }
-  
+
   @override
   FutureOr addPresentationToWall(Map<String, dynamic> map) async {
     final response =
         await _apiClient.post(ApiConstants.addPresentationToWall, map);
+    return response;
+  }
+  
+  @override
+  FutureOr addTeachersToBatch(Map<String, dynamic> map) async {
+    final response =
+        await _apiClient.post(ApiConstants.addTeachersToBatch, map);
     return response;
   }
 }
