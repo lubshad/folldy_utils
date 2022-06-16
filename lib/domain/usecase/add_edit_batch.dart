@@ -21,12 +21,14 @@ class AddEditBatchParams {
   final int courseId;
   final int institutionId;
   final int? id;
+  final int facultyId;
 
   AddEditBatchParams(
       {required this.duration,
       required this.batchName,
       required this.courseId,
       required this.institutionId,
+      required this.facultyId,
       this.id});
 
   Map<String, dynamic> toMap() {
@@ -37,6 +39,7 @@ class AddEditBatchParams {
       'course': courseId,
       'institution': institutionId,
       'id': id,
+      "facultyId": facultyId,
     };
   }
 }

@@ -2,8 +2,14 @@ import 'package:basic_template/basic_template.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/presentation/elements/element_utils.dart';
 
+import 'package:palette_generator/palette_generator.dart';
 
-
+// Calculate dominant color from ImageProvider
+Future<Color?> getImagePalette(ImageProvider imageProvider) async {
+  final PaletteGenerator paletteGenerator =
+      await PaletteGenerator.fromImageProvider(imageProvider);
+  return paletteGenerator.dominantColor?.color;
+}
 
 class PortraitPage extends StatelessWidget {
   const PortraitPage({
@@ -28,7 +34,8 @@ class PortraitPage extends StatelessWidget {
             ? null
             : DecorationImage(
                 image: CachedNetworkImageProvider(
-                    domainUrl + item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
+                    domainUrl + item["backgroundImage"],
+                    cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
         // border: Border.all(color: Colors.black87)
@@ -82,8 +89,6 @@ class PortraitPage extends StatelessWidget {
   }
 }
 
-
-
 class PortraitThumbnail extends StatelessWidget {
   const PortraitThumbnail({
     Key? key,
@@ -101,7 +106,8 @@ class PortraitThumbnail extends StatelessWidget {
             ? null
             : DecorationImage(
                 image: CachedNetworkImageProvider(
-                    domainUrl + item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
+                    domainUrl + item["backgroundImage"],
+                    cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
         // border: Border.all(color: Colors.black87)
@@ -138,23 +144,20 @@ class PortraitThumbnail extends StatelessWidget {
               // ),
               ...items
                   .map((e) => Positioned(
-                      top: e["top"],
-                      left: e["left"],
-                      height: e["height"],
-                      width: e["width"],
-                      // child: GestureDetector(
-                      //   onTap: e["hidden"] != true && e["topic"] == true
-                      //       ? () => onTap(e)
-                      //       : null,
+                        top: e["top"],
+                        left: e["left"],
+                        height: e["height"],
+                        width: e["width"],
+                        // child: GestureDetector(
+                        //   onTap: e["hidden"] != true && e["topic"] == true
+                        //       ? () => onTap(e)
+                        //       : null,
                         child: ThumbnailItem(item: e, domainUrl: domainUrl),
                       ))
-                      // )
+                  // )
                   .toList(),
             ]);
       }),
     );
   }
 }
-
-
-

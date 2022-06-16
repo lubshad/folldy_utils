@@ -16,12 +16,15 @@ class ListInstitutionBatches
 
 class InstitutionBatchListingParams {
   final int institutionId;
+  final int facultyId;
 
-  InstitutionBatchListingParams({required this.institutionId});
+  InstitutionBatchListingParams(
+      {required this.institutionId, required this.facultyId});
 
   Map<String, dynamic> toMap() {
     return {
       'institution': institutionId,
+      "facultyId" : facultyId,
     };
   }
 }
