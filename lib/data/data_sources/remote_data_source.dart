@@ -101,6 +101,10 @@ abstract class RemoteDataSource {
   FutureOr addPresentationToWall(Map<String, dynamic> map);
 
   FutureOr addTeachersToBatch(Map<String, dynamic> map);
+
+  FutureOr updateChapterPresentationDisplayOrder(Map<String, dynamic> map);
+
+  FutureOr getChapterPresentations(Map<String, dynamic> map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -405,11 +409,25 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         await _apiClient.post(ApiConstants.addPresentationToWall, map);
     return response;
   }
-  
+
   @override
   FutureOr addTeachersToBatch(Map<String, dynamic> map) async {
     final response =
         await _apiClient.post(ApiConstants.addTeachersToBatch, map);
+    return response;
+  }
+
+  @override
+  FutureOr updateChapterPresentationDisplayOrder(
+      Map<String, dynamic> map) async {
+    final response = _apiClient.post(
+        ApiConstants.updateChapterPresentationDisplayOrder, map);
+    return response;
+  }
+
+  @override
+  FutureOr getChapterPresentations(Map<String, dynamic> map) async {
+    final response = _apiClient.post(ApiConstants.getChapterPresentations, map);
     return response;
   }
 }

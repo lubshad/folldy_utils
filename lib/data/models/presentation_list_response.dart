@@ -19,6 +19,7 @@ class Presentation {
     required this.name,
     required this.id,
     required this.module,
+    this.displayOrder,
   });
 
   String name;
@@ -26,11 +27,13 @@ class Presentation {
   int module;
   // List<Area> areas;
   List<String> tags;
+  int? displayOrder;
 
   factory Presentation.fromJson(Map<String, dynamic> json) => Presentation(
         name: json["name"],
         id: json["id"],
         module: json["module"],
+        displayOrder: json["displayOrder"],
         // areas: areaListResponseFromJson(json["areas"]),
         tags: List<String>.from(json["tags"].map((x) => x)),
       );

@@ -264,20 +264,35 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.deleteRecordedAudio(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> changeLiveSemester(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> changeLiveSemester(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.changeLiveSemester(map));
-    
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> addPresentationToWall(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> addPresentationToWall(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.addPresentationToWall(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> addTeachersToBatch(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> addTeachersToBatch(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.addTeachersToBatch(map));
+  }
+
+  @override
+  Future<Either<AppError, dynamic>> updateChapterPresentationDisplayOrder(
+      Map<String, dynamic> map) async {
+    return exceptionHandler(
+        _remoteDataSource.updateChapterPresentationDisplayOrder(map));
+  }
+
+  @override
+  Future<Either<AppError, dynamic>> getChapterPresentations(
+      Map<String, dynamic> map) async {
+    return exceptionHandler(_remoteDataSource.getChapterPresentations(map));
   }
 }

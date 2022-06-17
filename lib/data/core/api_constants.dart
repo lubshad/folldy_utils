@@ -1,8 +1,4 @@
-
-
 class ApiConstants {
-
-
   ApiConstants._();
 
   // // local
@@ -53,16 +49,20 @@ class ApiConstants {
   static const String addAreaToSubject = "add_area_to_subject";
   static const String getAreaWisePresentations = "area_wise_presentations";
   static const String addEditBatch = "add_edit_batch";
-  static const String listInstitutionBatches  = "list_institution_batches";
-  static const String getBatchDetails  = "batch_details";
-  static const String getSubjectDetails  = "subject_details";
-  static const String institutionFacultyLogin  = "institution_faculty_login";
-  static const String assignSubjectToFaculty  = "assign_subject_to_faculty";
-  static const String getFacultyDashboard  = "faculty_dashboard";
-  static const String getAllPages  = "get_all_pages";
-  static const String getAllRecordedPresentations  = "get_all_recorded_presentations";
+  static const String listInstitutionBatches = "list_institution_batches";
+  static const String getBatchDetails = "batch_details";
+  static const String getSubjectDetails = "subject_details";
+  static const String institutionFacultyLogin = "institution_faculty_login";
+  static const String assignSubjectToFaculty = "assign_subject_to_faculty";
+  static const String getFacultyDashboard = "faculty_dashboard";
+  static const String getAllPages = "get_all_pages";
+  static const String getAllRecordedPresentations =
+      "get_all_recorded_presentations";
   static const String deleteRecordedAudio = "delete_recorded_audio";
   static const String changeLiveSemester = "change_live_semester";
   static const String addPresentationToWall = "add_presentation_to_wall";
   static const String addTeachersToBatch = "add_teachers_to_batch";
+  static const String updateChapterPresentationDisplayOrder =
+      "update_chapter_presentation_display_order";
+  static const String getChapterPresentations = "chapter_presentations";
 }

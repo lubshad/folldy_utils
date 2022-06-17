@@ -133,4 +133,10 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> addTeachersToBatch(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, dynamic>> updateChapterPresentationDisplayOrder(
+      Map<String, dynamic> map);
+
+  Future<Either<AppError, dynamic>> getChapterPresentations(
+      Map<String, dynamic> map);
 }
