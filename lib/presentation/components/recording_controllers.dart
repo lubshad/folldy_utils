@@ -1,4 +1,5 @@
 import 'package:basic_template/basic_template.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/data/models/recording_state.dart';
 
@@ -50,7 +51,9 @@ class RecordingControlls extends StatelessWidget {
                         : "Pause Recording")),
               if (recordingState.isRecording)
                 IconButton(
-                    onPressed: stopRecording, icon: const Icon(Icons.stop))
+                    onPressed: stopRecording,
+                    icon: const Icon(CupertinoIcons.stop_circle,
+                        color: Colors.red), iconSize: defaultPaddingLarge,),
             ],
           );
   }
