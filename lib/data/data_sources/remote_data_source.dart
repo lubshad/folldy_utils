@@ -105,6 +105,8 @@ abstract class RemoteDataSource {
   FutureOr updateChapterPresentationDisplayOrder(Map<String, dynamic> map);
 
   FutureOr getChapterPresentations(Map<String, dynamic> map);
+
+  FutureOr removePresentationFromChapter(Map<String, dynamic> map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -428,6 +430,12 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   @override
   FutureOr getChapterPresentations(Map<String, dynamic> map) async {
     final response = _apiClient.post(ApiConstants.getChapterPresentations, map);
+    return response;
+  }
+  
+  @override
+  FutureOr removePresentationFromChapter(Map<String, dynamic> map) async {
+     final response = _apiClient.post(ApiConstants.removePresentationFromChapter, map);
     return response;
   }
 }

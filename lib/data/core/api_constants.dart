@@ -65,4 +65,5 @@ class ApiConstants {
   static const String updateChapterPresentationDisplayOrder =
       "update_chapter_presentation_display_order";
   static const String getChapterPresentations = "chapter_presentations";
+  static const String removePresentationFromChapter = "remove_presentation_from_chapter";
 }

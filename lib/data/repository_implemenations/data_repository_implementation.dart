@@ -295,4 +295,11 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> map) async {
     return exceptionHandler(_remoteDataSource.getChapterPresentations(map));
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> removePresentationFromChapter(Map<String, dynamic> map) async {
+    return exceptionHandler(_remoteDataSource.removePresentationFromChapter(map));
+
+    
+  }
 }

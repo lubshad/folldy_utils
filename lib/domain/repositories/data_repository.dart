@@ -139,4 +139,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> getChapterPresentations(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> removePresentationFromChapter(
+      Map<String, dynamic> map);
 }
