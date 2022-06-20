@@ -16,16 +16,22 @@ class Chapter {
     this.id,
     this.module = 1,
     this.subjectId,
+    this.subjectName,
   });
 
   String name;
   int? id;
   int module;
   int? subjectId;
+  String? subjectName;
 
-  factory Chapter.fromJson(Map<String, dynamic> json) =>
-      Chapter(name: json["name"], id: json["id"], module: json["module"], subjectId: json["subject"]);
+  factory Chapter.fromJson(Map<String, dynamic> json) => Chapter(
+      name: json["name"],
+      id: json["id"],
+      module: json["module"],
+      subjectName: json["subjectName"],
+      subjectId: json["subject"]);
 
   Map<String, dynamic> toJson() =>
-      {"name": name, "id": id, "module": module, "subject": subjectId};
+      {"name": name, "id": id, "module": module, "subject": subjectId , "subjectName": subjectName};
 }
