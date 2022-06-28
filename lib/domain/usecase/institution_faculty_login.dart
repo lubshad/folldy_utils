@@ -16,12 +16,14 @@ class InstitutionFacultyLogin
 
 class InstitutionFacultyLoginParams {
   final String phone;
+  final String uuid;
 
-  InstitutionFacultyLoginParams({required this.phone});
+  InstitutionFacultyLoginParams({required this.phone, required this.uuid});
 
   Map<String, dynamic> toMap() {
     return {
       'phone': phone,
+      "uuid": uuid
     };
   }
 }

@@ -16,14 +16,17 @@ class Faculty {
     required this.name,
     required this.phone,
     required this.institution,
+    required this.uuid,
   });
 
   final int id;
   final String name;
   final String phone;
   final int institution;
+  final String? uuid;
 
   factory Faculty.fromJson(Map<String, dynamic> json) => Faculty(
+      uuid: json["uuid"],
       id: json["id"],
       name: json["username"],
       phone: json["phone"],
@@ -31,5 +34,9 @@ class Faculty {
 
   Map<String, dynamic> toJson() => {
         "id": id,
+        "username": name,
+        "phone": phone,
+        "institution": institution,
+        "uuid": uuid,
       };
 }

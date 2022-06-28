@@ -145,4 +145,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> getReadModeElements(
       Map<String, dynamic> params);
+
+  Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(
+      Map<String, dynamic> map);
 }

@@ -67,5 +67,6 @@ class ApiConstants {
   static const String getChapterPresentations = "chapter_presentations";
   static const String removePresentationFromChapter = "remove_presentation_from_chapter";
   static const String getReadModeElements = "get_read_mode_elements";
+  static const String checkRegisteredUser = "check_registered_user";
 
 }

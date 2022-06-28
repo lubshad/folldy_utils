@@ -307,4 +307,10 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> getReadModeElements(Map<String, dynamic> params) async {
     return await exceptionHandler(_remoteDataSource.getReadModeElements(params));
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.checkRegisteredUser(map));
+    
+  }
 }

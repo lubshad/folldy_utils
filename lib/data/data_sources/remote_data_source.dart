@@ -109,6 +109,8 @@ abstract class RemoteDataSource {
   FutureOr removePresentationFromChapter(Map<String, dynamic> map);
 
   FutureOr getReadModeElements(Map<String, dynamic> params);
+
+  FutureOr checkRegisteredUser(Map<String, dynamic> map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -441,11 +443,18 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         _apiClient.post(ApiConstants.removePresentationFromChapter, map);
     return response;
   }
-  
+
   @override
   FutureOr getReadModeElements(Map<String, dynamic> params) async {
     final response =
         await _apiClient.post(ApiConstants.getReadModeElements, params);
+    return response;
+  }
+  
+  @override
+  FutureOr checkRegisteredUser(Map<String, dynamic> map) async {
+    final response =
+        await _apiClient.post(ApiConstants.checkRegisteredUser, map);
     return response;
   }
 }
