@@ -313,4 +313,10 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.checkRegisteredUser(map));
     
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> registerStudent(Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.registerStudent(map));
+    
+  }
 }

@@ -148,4 +148,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> registerStudent(
+      Map<String, dynamic> map);
 }
