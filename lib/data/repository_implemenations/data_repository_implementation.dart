@@ -319,4 +319,14 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.registerStudent(map));
     
   }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> studentLogin(Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.studentLogin(map));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> getStudentDashboard(Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.getStudentDashboard(map));
+  }
 }

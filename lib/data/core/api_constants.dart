@@ -69,5 +69,7 @@ class ApiConstants {
   static const String getReadModeElements = "get_read_mode_elements";
   static const String checkRegisteredUser = "check_registered_user";
   static const String registerStudent = "register_student";
+  static const String studentLogin = "student_login";
+  static const String studentDashboard = "student_dashboard";
 
 }
