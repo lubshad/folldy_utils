@@ -295,43 +295,54 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> map) async {
     return exceptionHandler(_remoteDataSource.getChapterPresentations(map));
   }
-  
-  @override
-  Future<Either<AppError, Map<String, dynamic>>> removePresentationFromChapter(Map<String, dynamic> map) async {
-    return exceptionHandler(_remoteDataSource.removePresentationFromChapter(map));
 
-    
-  }
-  
   @override
-  Future<Either<AppError, dynamic>> getReadModeElements(Map<String, dynamic> params) async {
-    return await exceptionHandler(_remoteDataSource.getReadModeElements(params));
+  Future<Either<AppError, Map<String, dynamic>>> removePresentationFromChapter(
+      Map<String, dynamic> map) async {
+    return exceptionHandler(
+        _remoteDataSource.removePresentationFromChapter(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(Map<String, dynamic> map) async {
+  Future<Either<AppError, dynamic>> getReadModeElements(
+      Map<String, dynamic> params) async {
+    return await exceptionHandler(
+        _remoteDataSource.getReadModeElements(params));
+  }
+
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.checkRegisteredUser(map));
-    
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> registerStudent(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> registerStudent(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.registerStudent(map));
-    
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> studentLogin(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> studentLogin(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.studentLogin(map));
   }
-  
+
   @override
-  Future<Either<AppError, dynamic>> getStudentDashboard(Map<String, dynamic> map) async {
+  Future<Either<AppError, dynamic>> getStudentDashboard(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.getStudentDashboard(map));
   }
-  
+
   @override
-  Future<Either<AppError, Map<String, dynamic>>> registerTeacher(Map<String, dynamic> map) async {
+  Future<Either<AppError, Map<String, dynamic>>> registerTeacher(
+      Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.registerTeacher(map));
+  }
+
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> joinBatch(
+      Map<String, dynamic> json) async {
+    return await exceptionHandler(_remoteDataSource.joinBatch(json));
   }
 }

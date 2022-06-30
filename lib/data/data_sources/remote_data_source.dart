@@ -119,6 +119,8 @@ abstract class RemoteDataSource {
   FutureOr getStudentDashboard(Map<String, dynamic> map);
 
   FutureOr registerTeacher(Map<String, dynamic> map);
+
+  FutureOr joinBatch(Map<String, dynamic> json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -483,10 +485,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.studentDashboard, map);
     return response;
   }
-  
+
   @override
   FutureOr registerTeacher(Map<String, dynamic> map) async {
-     final response = await _apiClient.post(ApiConstants.registerTeacher, map);
+    final response = await _apiClient.post(ApiConstants.registerTeacher, map);
+    return response;
+  }
+
+  @override
+  FutureOr joinBatch(Map<String, dynamic> json) async {
+    final response = await _apiClient.post(ApiConstants.joinBatch, json);
     return response;
   }
 }

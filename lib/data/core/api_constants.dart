@@ -65,12 +65,13 @@ class ApiConstants {
   static const String updateChapterPresentationDisplayOrder =
       "update_chapter_presentation_display_order";
   static const String getChapterPresentations = "chapter_presentations";
-  static const String removePresentationFromChapter = "remove_presentation_from_chapter";
+  static const String removePresentationFromChapter =
+      "remove_presentation_from_chapter";
   static const String getReadModeElements = "get_read_mode_elements";
   static const String checkRegisteredUser = "check_registered_user";
   static const String registerStudent = "register_student";
   static const String registerTeacher = "register_teacher";
+  static const String joinBatch = "join_batch";
   static const String studentLogin = "student_login";
   static const String studentDashboard = "student_dashboard";
-
 }

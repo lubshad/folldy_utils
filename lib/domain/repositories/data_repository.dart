@@ -160,4 +160,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> registerTeacher(
       Map<String, dynamic> map);
+
+  Future<Either<AppError, Map<String, dynamic>>> joinBatch(
+      Map<String, dynamic> json);
 }

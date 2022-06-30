@@ -22,7 +22,7 @@ class Faculty {
   final int id;
   final String name;
   final String phone;
-  final int institution;
+  final int? institution;
   final String? uuid;
 
   factory Faculty.fromJson(Map<String, dynamic> json) => Faculty(
