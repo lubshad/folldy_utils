@@ -25,19 +25,24 @@ class RecordingControlls extends StatelessWidget {
     return recordingState.isProcessing
         ? const Center(child: CircularProgressIndicator())
         : ElevatedButtonTheme(
-          data: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              primary: opaqueBlack
-            )
-          ),
-          child: Row(
+            data: ElevatedButtonThemeData(
+                style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    padding: const EdgeInsets.only(
+                        top: defaultPaddingSmall,
+                        bottom: defaultPaddingSmall,
+                        left: defaultPadding,
+                        right: defaultPadding),
+                    shape: const StadiumBorder(),
+                    primary: opaqueBlack)),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 if (!recordingState.isRecording)
                   ElevatedButton.icon(
                       onPressed: startRecording,
-                      icon: const Icon(Icons.videocam_rounded),
-                      label: const Text("Start Recording")),
+                      icon: const Icon(CupertinoIcons.mic_fill),
+                      label: const Text("Record")),
                 if (recordingState.isRecording)
                   ElevatedButton.icon(
                       onPressed: recordingState.isPaused
@@ -57,11 +62,13 @@ class RecordingControlls extends StatelessWidget {
                           : "Pause Recording")),
                 if (recordingState.isRecording)
                   IconButton(
-                      onPressed: stopRecording,
-                      icon: const Icon(CupertinoIcons.stop_circle,
-                          color: Colors.red), iconSize: defaultPaddingLarge,),
+                    onPressed: stopRecording,
+                    icon: const Icon(CupertinoIcons.stop_circle,
+                        color: Colors.red),
+                    iconSize: defaultPaddingLarge,
+                  ),
               ],
             ),
-        );
+          );
   }
 }
