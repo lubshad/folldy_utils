@@ -61,49 +61,68 @@ class PlayerControlls extends StatelessWidget {
                   )),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CircleContainer(
-                child: IconButton(
-                    onPressed: () => Get.bottomSheet(
-                        PlaybackSpeedSelection(
-                          currentSpeed: playerState.playbackSpeed,
-                          changePlaybackSpeed: changePlaybackSpeed,
-                        ),
-                        isScrollControlled: true),
-                    icon: Text(
-                      playerState.playbackSpeed.speedText,
-                      style: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .copyWith(color: Colors.white),
-                    )),
-              ),
-              CircleContainer(
-                child: IconButton(
-                    onPressed: skipBackward,
-                    icon: const Icon(Icons.replay_10_outlined)),
-              ),
-              CircleContainer(
-                child: IconButton(
-                    iconSize: defaultPaddingLarge,
-                    padding: const EdgeInsets.all(defaultPadding),
-                    onPressed: playerState.isPlaying ? pause : play,
-                    icon: Icon(playerState.isPlaying
-                        ? Icons.pause
-                        : Icons.play_arrow)),
-              ),
-              CircleContainer(
-                child: IconButton(
-                    onPressed: skipForward,
-                    icon: const Icon(Icons.forward_10_outlined)),
-              ),
-              CircleContainer(
-                child: IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.more_horiz)),
-              ),
-            ],
+          ButtonTheme(
+            padding: EdgeInsets.zero,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CircleContainer(
+                  child: SizedBox(
+                    width: defaultPaddingLarge * 1.4,
+                    height: defaultPaddingLarge * 1.4,
+                    child: IconButton(
+                        onPressed: () => Get.bottomSheet(
+                            PlaybackSpeedSelection(
+                              currentSpeed: playerState.playbackSpeed,
+                              changePlaybackSpeed: changePlaybackSpeed,
+                            ),
+                            isScrollControlled: true),
+                        icon: Text(
+                          playerState.playbackSpeed.speedText,
+                          style: Theme.of(context)
+                              .textTheme
+                              .caption!
+                              .copyWith(color: Colors.white),
+                        )),
+                  ),
+                ),
+                CircleContainer(
+                  child: SizedBox(
+                    width: defaultPaddingLarge * 1.4,
+                    height: defaultPaddingLarge * 1.4,
+                    child: IconButton(
+                        onPressed: skipBackward,
+                        icon: const Icon(Icons.replay_10_outlined)),
+                  ),
+                ),
+                CircleContainer(
+                  child: IconButton(
+                      iconSize: defaultPaddingLarge,
+                      padding: const EdgeInsets.all(defaultPadding),
+                      onPressed: playerState.isPlaying ? pause : play,
+                      icon: Icon(playerState.isPlaying
+                          ? Icons.pause
+                          : Icons.play_arrow)),
+                ),
+                CircleContainer(
+                  child: SizedBox(
+                    width: defaultPaddingLarge * 1.4,
+                    height: defaultPaddingLarge * 1.4,
+                    child: IconButton(
+                        onPressed: skipForward,
+                        icon: const Icon(Icons.forward_10_outlined)),
+                  ),
+                ),
+                CircleContainer(
+                  child: SizedBox(
+                    width: defaultPaddingLarge * 1.4,
+                    height: defaultPaddingLarge * 1.4,
+                    child: IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.more_horiz)),
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
