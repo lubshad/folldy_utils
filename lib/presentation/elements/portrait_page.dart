@@ -47,29 +47,29 @@ class PortraitPage extends StatelessWidget {
         return Stack(
             // clipBehavior: Clip.none,
             children: [
-              FractionallySizedBox(
-                widthFactor: 1,
-                heightFactor: 1,
-                alignment: Alignment.topLeft,
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: GestureDetector(
-                            onTap: previousPage,
-                            child: Container(
-                              color: Colors.transparent,
-                              width: double.infinity,
-                            ))),
-                    Expanded(
-                        child: GestureDetector(
-                            onTap: nextPage,
-                            child: Container(
-                              color: Colors.transparent,
-                              width: double.infinity,
-                            ))),
-                  ],
-                ),
-              ),
+              // FractionallySizedBox(
+              //   widthFactor: 1,
+              //   heightFactor: 1,
+              //   alignment: Alignment.topLeft,
+              //   child: Row(
+              //     children: [
+              //       Expanded(
+              //           child: GestureDetector(
+              //               onTap: previousPage,
+              //               child: Container(
+              //                 color: Colors.transparent,
+              //                 width: double.infinity,
+              //               ))),
+              //       Expanded(
+              //           child: GestureDetector(
+              //               onTap: nextPage,
+              //               child: Container(
+              //                 color: Colors.transparent,
+              //                 width: double.infinity,
+              //               ))),
+              //     ],
+              //   ),
+              // ),
               ...items
                   .map((e) => Positioned(
                       top: e["top"],

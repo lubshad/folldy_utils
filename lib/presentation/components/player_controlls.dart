@@ -25,106 +25,114 @@ class PlayerControlls extends StatelessWidget {
   final AudioPlayerState playerState;
   @override
   Widget build(BuildContext context) {
-    return IconTheme(
-      data: const IconThemeData(color: Colors.white),
-      child: Column(
-        children: [
-          Stack(
+    return AnimatedOpacity(
+      opacity: playerState.isVisible ? 1 : 0,
+      duration: defaultTransitionDuration,
+      child: IgnorePointer(
+        ignoring: !playerState.isVisible,
+        child: IconTheme(
+          data: const IconThemeData(color: Colors.white),
+          child: Column(
             children: [
-              Slider(
-                  min: 0,
-                  max: playerState.totalDuration.inMilliseconds.toDouble(),
-                  value: min(
-                      playerState.elapsedDuration.inMilliseconds.toDouble(),
-                      playerState.totalDuration.inMilliseconds.toDouble()),
-                  onChanged: (mills) =>
-                      seekToDuration(Duration(milliseconds: mills.toInt()))),
-              Positioned(
-                  left: defaultPadding,
-                  bottom: 0,
-                  child: Text(
-                    durationToMs(playerState.elapsedDuration),
-                    style: Theme.of(context)
-                        .textTheme
-                        .caption!
-                        .copyWith(color: Colors.white),
-                  )),
-              Positioned(
-                  right: defaultPadding,
-                  bottom: 0,
-                  child: Text(
-                    durationToMs(playerState.totalDuration),
-                    style: Theme.of(context)
-                        .textTheme
-                        .caption!
-                        .copyWith(color: Colors.white),
-                  )),
+              Stack(
+                children: [
+                  Slider(
+                      min: 0,
+                      max: playerState.totalDuration.inMilliseconds.toDouble(),
+                      value: min(
+                          playerState.elapsedDuration.inMilliseconds.toDouble(),
+                          playerState.totalDuration.inMilliseconds.toDouble()),
+                      onChanged: (mills) => seekToDuration(
+                          Duration(milliseconds: mills.toInt()))),
+                  Positioned(
+                      left: defaultPadding,
+                      bottom: 0,
+                      child: Text(
+                        durationToMs(playerState.elapsedDuration),
+                        style: Theme.of(context)
+                            .textTheme
+                            .caption!
+                            .copyWith(color: Colors.white),
+                      )),
+                  Positioned(
+                      right: defaultPadding,
+                      bottom: 0,
+                      child: Text(
+                        durationToMs(playerState.totalDuration),
+                        style: Theme.of(context)
+                            .textTheme
+                            .caption!
+                            .copyWith(color: Colors.white),
+                      )),
+                ],
+              ),
+              ButtonTheme(
+                padding: EdgeInsets.zero,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CircleContainer(
+                      child: SizedBox(
+                        width: defaultPaddingLarge * 1.4,
+                        height: defaultPaddingLarge * 1.4,
+                        child: IconButton(
+                            onPressed: () => Get.bottomSheet(
+                                PlaybackSpeedSelection(
+                                  currentSpeed: playerState.playbackSpeed,
+                                  changePlaybackSpeed: changePlaybackSpeed,
+                                ),
+                                isScrollControlled: true),
+                            icon: Text(
+                              playerState.playbackSpeed.speedText,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .caption!
+                                  .copyWith(color: Colors.white),
+                            )),
+                      ),
+                    ),
+                    CircleContainer(
+                      child: SizedBox(
+                        width: defaultPaddingLarge * 1.4,
+                        height: defaultPaddingLarge * 1.4,
+                        child: IconButton(
+                            onPressed: skipBackward,
+                            icon: const Icon(Icons.replay_10_outlined)),
+                      ),
+                    ),
+                    CircleContainer(
+                      child: IconButton(
+                          iconSize: defaultPaddingLarge,
+                          padding: const EdgeInsets.all(defaultPadding),
+                          onPressed: playerState.isPlaying ? pause : play,
+                          icon: Icon(playerState.isPlaying
+                              ? Icons.pause
+                              : Icons.play_arrow)),
+                    ),
+                    CircleContainer(
+                      child: SizedBox(
+                        width: defaultPaddingLarge * 1.4,
+                        height: defaultPaddingLarge * 1.4,
+                        child: IconButton(
+                            onPressed: skipForward,
+                            icon: const Icon(Icons.forward_10_outlined)),
+                      ),
+                    ),
+                    CircleContainer(
+                      child: SizedBox(
+                        width: defaultPaddingLarge * 1.4,
+                        height: defaultPaddingLarge * 1.4,
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.more_horiz)),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
-          ButtonTheme(
-            padding: EdgeInsets.zero,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CircleContainer(
-                  child: SizedBox(
-                    width: defaultPaddingLarge * 1.4,
-                    height: defaultPaddingLarge * 1.4,
-                    child: IconButton(
-                        onPressed: () => Get.bottomSheet(
-                            PlaybackSpeedSelection(
-                              currentSpeed: playerState.playbackSpeed,
-                              changePlaybackSpeed: changePlaybackSpeed,
-                            ),
-                            isScrollControlled: true),
-                        icon: Text(
-                          playerState.playbackSpeed.speedText,
-                          style: Theme.of(context)
-                              .textTheme
-                              .caption!
-                              .copyWith(color: Colors.white),
-                        )),
-                  ),
-                ),
-                CircleContainer(
-                  child: SizedBox(
-                    width: defaultPaddingLarge * 1.4,
-                    height: defaultPaddingLarge * 1.4,
-                    child: IconButton(
-                        onPressed: skipBackward,
-                        icon: const Icon(Icons.replay_10_outlined)),
-                  ),
-                ),
-                CircleContainer(
-                  child: IconButton(
-                      iconSize: defaultPaddingLarge,
-                      padding: const EdgeInsets.all(defaultPadding),
-                      onPressed: playerState.isPlaying ? pause : play,
-                      icon: Icon(playerState.isPlaying
-                          ? Icons.pause
-                          : Icons.play_arrow)),
-                ),
-                CircleContainer(
-                  child: SizedBox(
-                    width: defaultPaddingLarge * 1.4,
-                    height: defaultPaddingLarge * 1.4,
-                    child: IconButton(
-                        onPressed: skipForward,
-                        icon: const Icon(Icons.forward_10_outlined)),
-                  ),
-                ),
-                CircleContainer(
-                  child: SizedBox(
-                    width: defaultPaddingLarge * 1.4,
-                    height: defaultPaddingLarge * 1.4,
-                    child: IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.more_horiz)),
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

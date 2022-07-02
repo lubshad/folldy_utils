@@ -34,7 +34,7 @@ class RecordingControlls extends StatelessWidget {
                         left: defaultPadding,
                         right: defaultPadding),
                     shape: const StadiumBorder(),
-                    primary: opaqueBlack)),
+                    primary: opaqueBlack.withOpacity(.6))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

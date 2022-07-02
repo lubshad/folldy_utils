@@ -5,9 +5,11 @@ class AudioPlayerState {
   final Duration elapsedDuration;
   final bool isPlaying;
   final PlaybackSpeed playbackSpeed;
+  final bool isVisible;
 
   AudioPlayerState(
       {required this.totalDuration,
+       this.isVisible = true,
       required this.elapsedDuration,
       required this.playbackSpeed,
       required this.isPlaying});
