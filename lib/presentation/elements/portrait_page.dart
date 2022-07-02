@@ -19,12 +19,14 @@ class PortraitPage extends StatelessWidget {
     required this.domainUrl,
     required this.previousPage,
     required this.nextPage,
+    required this.onScreenTap,
   }) : super(key: key);
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic> item) onTap;
   final String domainUrl;
   final VoidCallback previousPage;
   final VoidCallback nextPage;
+  final VoidCallback onScreenTap;
 
   @override
   Widget build(BuildContext context) {
@@ -47,29 +49,32 @@ class PortraitPage extends StatelessWidget {
         return Stack(
             // clipBehavior: Clip.none,
             children: [
-              // FractionallySizedBox(
-              //   widthFactor: 1,
-              //   heightFactor: 1,
-              //   alignment: Alignment.topLeft,
-              //   child: Row(
-              //     children: [
-              //       Expanded(
-              //           child: GestureDetector(
-              //               onTap: previousPage,
-              //               child: Container(
-              //                 color: Colors.transparent,
-              //                 width: double.infinity,
-              //               ))),
-              //       Expanded(
-              //           child: GestureDetector(
-              //               onTap: nextPage,
-              //               child: Container(
-              //                 color: Colors.transparent,
-              //                 width: double.infinity,
-              //               ))),
-              //     ],
-              //   ),
-              // ),
+              FractionallySizedBox(
+                widthFactor: 1,
+                heightFactor: 1,
+                // alignment: Alignment.topLeft,
+                // child: Row(
+                //   children: [
+                //     Expanded(
+                //         child: GestureDetector(
+                //             onTap: previousPage,
+                //             child: Container(
+                //               color: Colors.transparent,
+                //               width: double.infinity,
+                //             ))),
+                //     Expanded(
+                //         child: GestureDetector(
+                //             onTap: nextPage,
+                //             child: Container(
+                //               color: Colors.transparent,
+                //               width: double.infinity,
+                //             ))),
+                //   ],
+                // ),
+                child : GestureDetector(
+                  onTap: onScreenTap,
+                ),
+              ),
               ...items
                   .map((e) => Positioned(
                       top: e["top"],

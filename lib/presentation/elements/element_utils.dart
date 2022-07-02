@@ -14,6 +14,7 @@ class PresentationItem extends StatelessWidget {
       this.onTap,
       required this.domainUrl,
       this.previousPage,
+      this.onScreenTap,
       this.nextPage})
       : super(key: key);
 
@@ -22,6 +23,7 @@ class PresentationItem extends StatelessWidget {
   final String domainUrl;
   final VoidCallback? previousPage;
   final VoidCallback? nextPage;
+  final VoidCallback? onScreenTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class PresentationItem extends StatelessWidget {
         return TextElementPresnetation(text: item);
       case ElementType.portraitPage:
         return PortraitPage(
+          onScreenTap: onScreenTap!,
           item: item,
           onTap: onTap!,
           domainUrl: domainUrl,

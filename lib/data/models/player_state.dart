@@ -6,10 +6,14 @@ class AudioPlayerState {
   final bool isPlaying;
   final PlaybackSpeed playbackSpeed;
   final bool isVisible;
+  final int totalPages;
+  final int currentPage;
 
   AudioPlayerState(
       {required this.totalDuration,
-       this.isVisible = true,
+      this.isVisible = true,
+      this.totalPages = 0,
+      this.currentPage = 0,
       required this.elapsedDuration,
       required this.playbackSpeed,
       required this.isPlaying});
