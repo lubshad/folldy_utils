@@ -345,4 +345,9 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> json) async {
     return await exceptionHandler(_remoteDataSource.joinBatch(json));
   }
+  
+  @override
+  Future<Either<AppError, dynamic>> loadMorePresentations(map) async {
+    return await exceptionHandler(_remoteDataSource.loadMorePresentations(map));
+  }
 }

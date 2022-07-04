@@ -12,9 +12,11 @@ class RecordingScreenAppBar extends StatelessWidget {
     required this.onReadmodeTap,
     required this.profileUrl,
     required this.playerState,
+    required this.minimize,
   }) : super(key: key);
   final VoidCallback onReadmodeTap;
   final Stream<AudioPlayerState> playerState;
+  final VoidCallback minimize;
 
   final String profileUrl;
 
@@ -45,9 +47,9 @@ class RecordingScreenAppBar extends StatelessWidget {
                                   height: defaultPaddingLarge,
                                   child: IconButton(
                                       padding: EdgeInsets.zero,
-                                      onPressed: Get.back,
+                                      onPressed: minimize,
                                       icon: const Icon(
-                                        CupertinoIcons.back,
+                                        CupertinoIcons.chevron_down,
                                         color: Colors.white,
                                       )),
                                 )),

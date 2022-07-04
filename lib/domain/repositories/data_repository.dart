@@ -163,4 +163,6 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> joinBatch(
       Map<String, dynamic> json);
+
+  Future<Either<AppError, dynamic>> loadMorePresentations(map);
 }

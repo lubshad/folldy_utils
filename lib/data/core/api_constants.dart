@@ -74,4 +74,5 @@ class ApiConstants {
   static const String joinBatch = "join_batch";
   static const String studentLogin = "student_login";
   static const String studentDashboard = "student_dashboard";
+  static const String loadMorePresentations = "load_more_presentations";
 }
