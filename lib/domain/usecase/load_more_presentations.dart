@@ -19,11 +19,12 @@ enum LoadMoreType { top, bottom }
 class LoadMorePresentationParams {
   final int presentationId;
   final LoadMoreType loadMoreType;
+  final int subjectId;
 
   LoadMorePresentationParams(
-      {required this.presentationId, required this.loadMoreType});
+      {required this.presentationId, required this.loadMoreType , required this.subjectId});
 
   toMap() {
-    return {"presentationId": presentationId, "type": loadMoreType.index};
+    return {"presentationId": presentationId, "type": loadMoreType.index , "subjectId": subjectId};
   }
 }

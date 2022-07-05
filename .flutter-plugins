@@ -1,7 +1,7 @@
 # This is a generated file; do not edit or check into version control.
 audio_session=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/audio_session-0.1.8/
-firebase_core=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.18.0/
-firebase_core_web=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.5/
+firebase_core=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.19.1/
+firebase_core_web=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.6/
 just_audio=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/just_audio-0.9.27/
 just_audio_web=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/just_audio_web-0.4.7/
 path_provider=/opt/homebrew/Caskroom/flutter/3.0.0/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.11/
