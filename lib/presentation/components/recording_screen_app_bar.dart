@@ -47,7 +47,7 @@ class RecordingScreenAppBar extends StatelessWidget {
                                   height: defaultPaddingLarge,
                                   child: IconButton(
                                       padding: EdgeInsets.zero,
-                                      onPressed: minimize,
+                                      onPressed: () {},
                                       icon: const Icon(
                                         CupertinoIcons.chevron_down,
                                         color: Colors.white,
