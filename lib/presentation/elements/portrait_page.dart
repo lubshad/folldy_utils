@@ -71,7 +71,7 @@ class PortraitPage extends StatelessWidget {
                 //             ))),
                 //   ],
                 // ),
-                child : GestureDetector(
+                child: GestureDetector(
                   onTap: onScreenTap,
                 ),
               ),
@@ -113,7 +113,8 @@ class PortraitThumbnail extends StatelessWidget {
                 image: CachedNetworkImageProvider(
                     domainUrl + item["backgroundImage"],
                     cacheManager: Get.find<CacheManager>()),
-                fit: BoxFit.values[item["fit"]]),
+                fit: BoxFit.values[item["fit"]],
+              ),
         color: Color(item["color"]),
         // border: Border.all(color: Colors.black87)
       ),
