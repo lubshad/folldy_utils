@@ -53,11 +53,17 @@ extension ReadModeElementExtension on ReadModeElementType {
   TextStyle get textStyle {
     switch (this) {
       case ReadModeElementType.title:
-        return Theme.of(Get.context!).textTheme.headline6!;
+        return Theme.of(Get.context!)
+            .textTheme
+            .headline6!
+            .copyWith(fontFamily: GoogleFonts.tinos().fontFamily);
       case ReadModeElementType.image:
         return Theme.of(Get.context!).textTheme.bodyText1!;
       case ReadModeElementType.description:
-        return Theme.of(Get.context!).textTheme.bodyText1!;
+        return Theme.of(Get.context!)
+            .textTheme
+            .bodyText1!
+            .copyWith(fontFamily: GoogleFonts.tinos().fontFamily);
     }
   }
 }
@@ -83,8 +89,7 @@ class ReadModeItem extends StatelessWidget {
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
           case ReadModeElementType.image:
-            return CachedNetworkImage(
-                imageUrl: domainUrl + item.imageUrl!);
+            return CachedNetworkImage(imageUrl: domainUrl + item.imageUrl!);
           case ReadModeElementType.description:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
