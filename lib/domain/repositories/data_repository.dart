@@ -165,4 +165,10 @@ abstract class DataRepository {
       Map<String, dynamic> json);
 
   Future<Either<AppError, dynamic>> loadMorePresentations(map);
+
+  Future<Either<AppError, dynamic>> updateAndroidSettings(map);
+
+  Future<Either<AppError, dynamic>> fetchAndroidSettings(json);
+
+  Future<Either<AppError, dynamic>> checkVersion(map);
 }

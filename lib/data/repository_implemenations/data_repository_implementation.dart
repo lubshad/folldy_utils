@@ -350,4 +350,21 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> loadMorePresentations(map) async {
     return await exceptionHandler(_remoteDataSource.loadMorePresentations(map));
   }
+  
+  @override
+  Future<Either<AppError, dynamic>> updateAndroidSettings(map) async {
+    return await exceptionHandler(_remoteDataSource.updateAndroidSettings(map));
+    
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> fetchAndroidSettings(json) async {
+    return await exceptionHandler(_remoteDataSource.fetchAndroidSettings(json));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> checkVersion(map) async {
+    return await exceptionHandler(_remoteDataSource.checkVersion(map));
+    
+  }
 }

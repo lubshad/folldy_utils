@@ -123,6 +123,12 @@ abstract class RemoteDataSource {
   FutureOr joinBatch(Map<String, dynamic> json);
 
   FutureOr loadMorePresentations(map);
+
+  FutureOr updateAndroidSettings(map);
+
+  FutureOr fetchAndroidSettings(json);
+
+  FutureOr checkVersion(map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -499,10 +505,32 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.joinBatch, json);
     return response;
   }
-  
+
   @override
   FutureOr loadMorePresentations(map) async {
-    final response = await _apiClient.post(ApiConstants.loadMorePresentations, map);
+    final response =
+        await _apiClient.post(ApiConstants.loadMorePresentations, map);
+    return response;
+  }
+
+  @override
+  FutureOr updateAndroidSettings(map) async {
+    final response =
+        await _apiClient.post(ApiConstants.updateAndroidSettings, map);
+    return response;
+  }
+
+  @override
+  FutureOr fetchAndroidSettings(json) async {
+    final response =
+        await _apiClient.post(ApiConstants.fetchAndroidSettings, json);
+    return response;
+  }
+  
+  @override
+  FutureOr checkVersion(map) async {
+     final response =
+        await _apiClient.post(ApiConstants.checkVersion, map);
     return response;
   }
 }

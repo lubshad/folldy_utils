@@ -75,4 +75,7 @@ class ApiConstants {
   static const String studentLogin = "student_login";
   static const String studentDashboard = "student_dashboard";
   static const String loadMorePresentations = "load_more_presentations";
+  static const String updateAndroidSettings = "update_android_settings";
+  static const String fetchAndroidSettings = "android_settings";
+  static const String checkVersion = "check_version";
 }
