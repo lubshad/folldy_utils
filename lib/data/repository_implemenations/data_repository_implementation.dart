@@ -367,4 +367,9 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.checkVersion(map));
     
   }
+  
+  @override
+  Future<Either<AppError, dynamic>> listReadmodeItems(map) async {
+    return await exceptionHandler(_remoteDataSource.listReadmodeItems(map));
+  }
 }

@@ -171,4 +171,6 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> fetchAndroidSettings(json);
 
   Future<Either<AppError, dynamic>> checkVersion(map);
+
+  Future<Either<AppError, dynamic>> listReadmodeItems(map);
 }

@@ -129,6 +129,8 @@ abstract class RemoteDataSource {
   FutureOr fetchAndroidSettings(json);
 
   FutureOr checkVersion(map);
+
+  FutureOr listReadmodeItems(map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -526,11 +528,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         await _apiClient.post(ApiConstants.fetchAndroidSettings, json);
     return response;
   }
-  
+
   @override
   FutureOr checkVersion(map) async {
-     final response =
-        await _apiClient.post(ApiConstants.checkVersion, map);
+    final response = await _apiClient.post(ApiConstants.checkVersion, map);
+    return response;
+  }
+  
+  @override
+  FutureOr listReadmodeItems(map) async {
+    final response = await _apiClient.post(ApiConstants.listReadmodeItems, map);
     return response;
   }
 }
