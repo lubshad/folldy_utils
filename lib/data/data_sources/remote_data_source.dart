@@ -534,10 +534,11 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.checkVersion, map);
     return response;
   }
-  
+
   @override
   FutureOr listReadmodeItems(map) async {
     final response = await _apiClient.post(ApiConstants.listReadmodeItems, map);
     return response;
   }
+  
 }

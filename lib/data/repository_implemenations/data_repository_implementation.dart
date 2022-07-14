@@ -372,4 +372,5 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> listReadmodeItems(map) async {
     return await exceptionHandler(_remoteDataSource.listReadmodeItems(map));
   }
+  
 }
