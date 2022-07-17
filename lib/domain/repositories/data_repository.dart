@@ -173,4 +173,10 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> checkVersion(map);
 
   Future<Either<AppError, dynamic>> listReadmodeItems(map);
+
+  Future<Either<AppError, Map<String, dynamic>>> joinBatchRequest(map);
+
+  Future<Either<AppError, dynamic>> listJoinRequests(map);
+
+  Future<Either<AppError, dynamic>> updateRequestStatus(map);
 }

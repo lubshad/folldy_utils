@@ -79,4 +79,7 @@ class ApiConstants {
   static const String fetchAndroidSettings = "android_settings";
   static const String checkVersion = "check_version";
   static const String listReadmodeItems = "list_readmode_items";
+  static const String joinBatchRequest = "join_batch_request";
+  static const String listJoinRequests = "list_join_requests";
+  static const String updateRequestStatus = "update_request_status";
 }

@@ -373,4 +373,22 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.listReadmodeItems(map));
   }
   
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> joinBatchRequest(map) async {
+    return await exceptionHandler(_remoteDataSource.joinBatchRequest(map));
+    
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> listJoinRequests(map) async {
+    return await exceptionHandler(_remoteDataSource.listJoinRequests(map));
+    
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> updateRequestStatus(map) async {
+    return await exceptionHandler(_remoteDataSource.updateRequestStatus(map));
+    
+  }
+  
 }

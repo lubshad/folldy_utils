@@ -131,6 +131,12 @@ abstract class RemoteDataSource {
   FutureOr checkVersion(map);
 
   FutureOr listReadmodeItems(map);
+
+  FutureOr joinBatchRequest(map);
+
+  FutureOr listJoinRequests(map);
+
+  FutureOr updateRequestStatus(map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -540,5 +546,22 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.listReadmodeItems, map);
     return response;
   }
+
+  @override
+  FutureOr joinBatchRequest(map) async {
+    final response = await _apiClient.post(ApiConstants.joinBatchRequest, map);
+    return response;
+  }
+
+  @override
+  FutureOr listJoinRequests(map) async {
+    final response = await _apiClient.post(ApiConstants.listJoinRequests, map);
+    return response;
+  }
   
+  @override
+  FutureOr updateRequestStatus(map) async {
+    final response = await _apiClient.post(ApiConstants.updateRequestStatus, map);
+    return response;
+  }
 }
