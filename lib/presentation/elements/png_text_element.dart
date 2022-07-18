@@ -54,6 +54,7 @@ class GalleryImageElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OpenContainer(
+        closedColor: Colors.transparent,
         closedBuilder: (context, action) => CachedNetworkImage(
               imageUrl: domainUrl + item["png"],
               fit: BoxFit.values[item["fit"]],
