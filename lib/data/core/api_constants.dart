@@ -82,4 +82,8 @@ class ApiConstants {
   static const String joinBatchRequest = "join_batch_request";
   static const String listJoinRequests = "list_join_requests";
   static const String updateRequestStatus = "update_request_status";
+  static const String adminLogin = "admin_login";
+  static const String listAllUsers = "list_all_users";
+  static const String createNewUser = "create_new_user";
+  static const String adminLogout = "admin_logout";
 }

@@ -137,6 +137,14 @@ abstract class RemoteDataSource {
   FutureOr listJoinRequests(map);
 
   FutureOr updateRequestStatus(map);
+
+  FutureOr adminLogin(map);
+
+  FutureOr listAllUsers(map);
+
+  FutureOr createNewUser(map);
+
+  FutureOr adminLogout(json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -558,10 +566,35 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.listJoinRequests, map);
     return response;
   }
-  
+
   @override
   FutureOr updateRequestStatus(map) async {
-    final response = await _apiClient.post(ApiConstants.updateRequestStatus, map);
+    final response =
+        await _apiClient.post(ApiConstants.updateRequestStatus, map);
+    return response;
+  }
+
+  @override
+  FutureOr adminLogin(map) async {
+    final response = await _apiClient.post(ApiConstants.adminLogin, map);
+    return response;
+  }
+
+  @override
+  FutureOr listAllUsers(map) async {
+    final response = await _apiClient.post(ApiConstants.listAllUsers, map);
+    return response;
+  }
+
+  @override
+  FutureOr createNewUser(map) async {
+    final response = await _apiClient.post(ApiConstants.createNewUser, map);
+    return response;
+  }
+  
+  @override
+  FutureOr adminLogout(json) async {
+    final response = await _apiClient.post(ApiConstants.adminLogout, json);
     return response;
   }
 }

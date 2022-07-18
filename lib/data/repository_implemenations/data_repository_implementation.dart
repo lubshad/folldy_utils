@@ -391,4 +391,27 @@ class DataRepositoryImplementation extends DataRepository
     
   }
   
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> adminLogin(map) async {
+    return await exceptionHandler(_remoteDataSource.adminLogin(map));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> listAllUsers(map)async  {
+    return await exceptionHandler(_remoteDataSource.listAllUsers(map));
+    
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> createNewUser(map) async {
+    return await exceptionHandler(_remoteDataSource.createNewUser(map));
+    
+  }
+  
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> adminLogout(json) async {
+    return await exceptionHandler(_remoteDataSource.adminLogout(json));
+    
+  }
+  
 }

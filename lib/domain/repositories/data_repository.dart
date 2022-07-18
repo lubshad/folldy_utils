@@ -179,4 +179,12 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> listJoinRequests(map);
 
   Future<Either<AppError, dynamic>> updateRequestStatus(map);
+
+  Future<Either<AppError, Map<String, dynamic>>> adminLogin(map);
+
+  Future<Either<AppError, dynamic>> listAllUsers(map);
+
+  Future<Either<AppError, dynamic>> createNewUser(map);
+
+  Future<Either<AppError, Map<String, dynamic>>> adminLogout(json);
 }
