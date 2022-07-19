@@ -86,4 +86,5 @@ class ApiConstants {
   static const String listAllUsers = "list_all_users";
   static const String createNewUser = "create_new_user";
   static const String adminLogout = "admin_logout";
+  static const String changeSubject = "change_subject";
 }

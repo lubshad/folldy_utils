@@ -187,4 +187,6 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> createNewUser(map);
 
   Future<Either<AppError, Map<String, dynamic>>> adminLogout(json);
+
+  Future<Either<AppError, dynamic>> changeSubject(map);
 }

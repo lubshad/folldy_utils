@@ -145,6 +145,8 @@ abstract class RemoteDataSource {
   FutureOr createNewUser(map);
 
   FutureOr adminLogout(json);
+
+  FutureOr changeSubject(map);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -591,10 +593,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.createNewUser, map);
     return response;
   }
-  
+
   @override
   FutureOr adminLogout(json) async {
     final response = await _apiClient.post(ApiConstants.adminLogout, json);
+    return response;
+  }
+  
+  @override
+  FutureOr changeSubject(map) async {
+     final response = await _apiClient.post(ApiConstants.changeSubject, map);
     return response;
   }
 }

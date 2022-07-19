@@ -414,4 +414,9 @@ class DataRepositoryImplementation extends DataRepository
     
   }
   
+  @override
+  Future<Either<AppError, dynamic>> changeSubject(map) async {
+    return await exceptionHandler(_remoteDataSource.changeSubject(map));
+  }
+  
 }
