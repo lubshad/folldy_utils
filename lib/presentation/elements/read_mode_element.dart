@@ -43,19 +43,16 @@ class ReadModeElement {
   }
 }
 
-enum ReadModeElementType {
-  title,
-  image,
-  description,
-  heading
-}
+enum ReadModeElementType { title, image, description, heading }
 
 extension ReadModeElementExtension on ReadModeElementType {
   TextStyle get textStyle {
     switch (this) {
       case ReadModeElementType.title:
-        return Theme.of(Get.context!).textTheme.headline6!.copyWith(
-            fontFamily: GoogleFonts.tinos().fontFamily);
+        return Theme.of(Get.context!)
+            .textTheme
+            .headline6!
+            .copyWith(fontSize: 18, fontFamily: GoogleFonts.tinos().fontFamily);
       case ReadModeElementType.image:
         return Theme.of(Get.context!).textTheme.bodyText1!;
       case ReadModeElementType.description:
@@ -65,7 +62,8 @@ extension ReadModeElementExtension on ReadModeElementType {
             .copyWith(fontFamily: GoogleFonts.tinos().fontFamily);
       case ReadModeElementType.heading:
         return Theme.of(Get.context!).textTheme.headline6!.copyWith(
-            fontFamily: GoogleFonts.tinos().fontFamily , fontWeight: FontWeight.w600);
+            fontFamily: GoogleFonts.tinos().fontFamily,
+            fontWeight: FontWeight.w600);
     }
   }
 }

@@ -9,6 +9,7 @@ class PlayerControlls extends StatelessWidget {
   const PlayerControlls(
       {Key? key,
       required this.play,
+      required this.popupButton,
       required this.pause,
       required this.playerState,
       required this.skipBackward,
@@ -23,6 +24,7 @@ class PlayerControlls extends StatelessWidget {
   final Function(Duration) seekToDuration;
   final Function(double) changePlaybackSpeed;
   final AudioPlayerState playerState;
+  final Widget popupButton;
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
@@ -118,15 +120,7 @@ class PlayerControlls extends StatelessWidget {
                             icon: const Icon(Icons.forward_10_outlined)),
                       ),
                     ),
-                    CircleContainer(
-                      child: SizedBox(
-                        width: defaultPaddingLarge * 1.4,
-                        height: defaultPaddingLarge * 1.4,
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.more_horiz)),
-                      ),
-                    ),
+                    popupButton
                   ],
                 ),
               )

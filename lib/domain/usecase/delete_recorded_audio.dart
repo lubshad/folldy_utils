@@ -15,7 +15,7 @@ class DeleteRecordedAudio
 }
 
 class DeleteRecordedAudioParams {
-  final String audioId;
+  final int audioId;
 
   DeleteRecordedAudioParams({required this.audioId});
 
