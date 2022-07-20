@@ -189,4 +189,6 @@ abstract class DataRepository {
   Future<Either<AppError, Map<String, dynamic>>> adminLogout(json);
 
   Future<Either<AppError, dynamic>> changeSubject(map);
+
+  Future<Either<AppError, dynamic>> fetchBatchDetails(map);
 }

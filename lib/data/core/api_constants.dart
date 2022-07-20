@@ -87,4 +87,5 @@ class ApiConstants {
   static const String createNewUser = "create_new_user";
   static const String adminLogout = "admin_logout";
   static const String changeSubject = "change_subject";
+  static const String fetchBatchDetails = "fetch_batch_details";
 }
