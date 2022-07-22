@@ -17,11 +17,14 @@ class AddPresentationToWall
 class AddPresentationToWallParams {
   final int presentationId;
   final int subjectId;
+  final int chapterId;
 
   AddPresentationToWallParams(
-      {required this.presentationId, required this.subjectId});
+      {
+        required this.chapterId, 
+        required this.presentationId, required this.subjectId});
 
   Map<String, dynamic> toMap() {
-    return {'presentationId': presentationId, "subjectId": subjectId};
+    return {'presentationId': presentationId, "subjectId": subjectId , "chapterId": chapterId};
   }
 }

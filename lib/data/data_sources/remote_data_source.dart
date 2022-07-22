@@ -149,6 +149,10 @@ abstract class RemoteDataSource {
   FutureOr changeSubject(map);
 
   FutureOr fetchBatchDetails(map);
+
+  FutureOr leaveBatch(json);
+
+  FutureOr suspendBatch(json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -611,6 +615,18 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   @override
   FutureOr fetchBatchDetails(map) async {
     final response = await _apiClient.post(ApiConstants.fetchBatchDetails, map);
+    return response;
+  }
+
+  @override
+  FutureOr leaveBatch(json) async {
+    final response = await _apiClient.post(ApiConstants.leaveBatch, json);
+    return response;
+  }
+  
+  @override
+  FutureOr suspendBatch(json) async {
+     final response = await _apiClient.post(ApiConstants.suspendBatch, json);
     return response;
   }
 }

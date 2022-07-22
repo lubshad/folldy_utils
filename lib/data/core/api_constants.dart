@@ -88,4 +88,6 @@ class ApiConstants {
   static const String adminLogout = "admin_logout";
   static const String changeSubject = "change_subject";
   static const String fetchBatchDetails = "fetch_batch_details";
+  static const String leaveBatch = "leave_batch";
+  static const String suspendBatch = "suspend_batch";
 }

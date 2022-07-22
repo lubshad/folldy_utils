@@ -424,4 +424,15 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.fetchBatchDetails(map));
   }
   
+  @override
+  Future<Either<AppError, dynamic>> leaveBatch(json) async {
+    return await exceptionHandler(_remoteDataSource.leaveBatch(json));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> suspendBatch(json) async {
+    return await exceptionHandler(_remoteDataSource.suspendBatch(json));
+    
+  }
+  
 }

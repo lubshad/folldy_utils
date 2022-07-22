@@ -191,4 +191,8 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> changeSubject(map);
 
   Future<Either<AppError, dynamic>> fetchBatchDetails(map);
+
+  Future<Either<AppError, dynamic>> leaveBatch(json);
+
+  Future<Either<AppError, dynamic>> suspendBatch(json);
 }
