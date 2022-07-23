@@ -199,4 +199,6 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> removeUserFromBatch(json);
 
   Future<Either<AppError, dynamic>> makeFacultyBatchAdmin(json);
+
+  Future<Either<AppError, dynamic>> fetchProfileDetails(json);
 }

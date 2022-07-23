@@ -445,4 +445,10 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.makeFacultyBatchAdmin(json));
   }
   
+  @override
+  Future<Either<AppError, dynamic>> fetchProfileDetails(json) async {
+    return await exceptionHandler(_remoteDataSource.fetchProfileDetails(json));
+    
+  }
+  
 }

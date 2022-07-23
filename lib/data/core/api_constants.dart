@@ -92,4 +92,5 @@ class ApiConstants {
   static const String suspendBatch = "suspend_batch";
   static const String removeUserFromBatch = "remove_user_from_batch";
   static const String makeFacultyBatchAdmin = "make_faculty_batch_admin";
+  static const String fetchProfileDetails = "fetch_profile_details";
 }
