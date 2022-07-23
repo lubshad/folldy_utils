@@ -153,6 +153,10 @@ abstract class RemoteDataSource {
   FutureOr leaveBatch(json);
 
   FutureOr suspendBatch(json);
+
+  FutureOr removeUserFromBatch(json);
+
+  FutureOr makeFacultyBatchAdmin(json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -623,10 +627,24 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.leaveBatch, json);
     return response;
   }
-  
+
   @override
   FutureOr suspendBatch(json) async {
-     final response = await _apiClient.post(ApiConstants.suspendBatch, json);
+    final response = await _apiClient.post(ApiConstants.suspendBatch, json);
+    return response;
+  }
+
+  @override
+  FutureOr removeUserFromBatch(json) async {
+    final response =
+        await _apiClient.post(ApiConstants.removeUserFromBatch, json);
+    return response;
+  }
+  
+  @override
+  FutureOr makeFacultyBatchAdmin(json) async {
+    final response =
+        await _apiClient.post(ApiConstants.makeFacultyBatchAdmin, json);
     return response;
   }
 }

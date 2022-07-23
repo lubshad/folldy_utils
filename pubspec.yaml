@@ -15,6 +15,7 @@ dependencies:
     path: ../basic_template
   just_audio: ^0.9.21
   palette_generator: ^0.3.3+1
+  wakelock: ^0.6.2
 
 dev_dependencies:
   flutter_test:

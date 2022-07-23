@@ -435,4 +435,14 @@ class DataRepositoryImplementation extends DataRepository
     
   }
   
+  @override
+  Future<Either<AppError, dynamic>> removeUserFromBatch(json) async {
+    return await exceptionHandler(_remoteDataSource.removeUserFromBatch(json));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> makeFacultyBatchAdmin(json) async {
+    return await exceptionHandler(_remoteDataSource.makeFacultyBatchAdmin(json));
+  }
+  
 }
