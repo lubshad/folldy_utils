@@ -72,11 +72,9 @@ class ReadModeItem extends StatelessWidget {
   const ReadModeItem({
     Key? key,
     required this.item,
-    required this.domainUrl,
   }) : super(key: key);
 
   final ReadModeElement item;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +87,7 @@ class ReadModeItem extends StatelessWidget {
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
           case ReadModeElementType.image:
-            return CachedNetworkImage(imageUrl: domainUrl + item.imageUrl!);
+            return CachedNetworkImage(imageUrl:item.imageUrl!);
           case ReadModeElementType.description:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);

@@ -16,14 +16,12 @@ class PortraitPage extends StatelessWidget {
     Key? key,
     required this.item,
     required this.onTap,
-    required this.domainUrl,
     required this.previousPage,
     required this.nextPage,
     required this.onScreenTap,
   }) : super(key: key);
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic> item) onTap;
-  final String domainUrl;
   final VoidCallback previousPage;
   final VoidCallback nextPage;
   final VoidCallback onScreenTap;
@@ -36,7 +34,7 @@ class PortraitPage extends StatelessWidget {
             ? null
             : DecorationImage(
                 image: CachedNetworkImageProvider(
-                    domainUrl + item["backgroundImage"],
+                      item["backgroundImage"],
                     cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
@@ -85,7 +83,7 @@ class PortraitPage extends StatelessWidget {
                         onTap: e["hidden"] != true && e["topic"] == true
                             ? () => onTap(e)
                             : null,
-                        child: PresentationItem(item: e, domainUrl: domainUrl),
+                        child: PresentationItem(item: e),
                       )))
                   .toList(),
             ]);
@@ -98,10 +96,8 @@ class PortraitThumbnail extends StatelessWidget {
   const PortraitThumbnail({
     Key? key,
     required this.item,
-    required this.domainUrl,
   }) : super(key: key);
   final Map<String, dynamic> item;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +107,7 @@ class PortraitThumbnail extends StatelessWidget {
             ? null
             : DecorationImage(
                 image: CachedNetworkImageProvider(
-                    domainUrl + item["backgroundImage"],
+                  item["backgroundImage"],
                     cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]],
               ),
@@ -158,7 +154,7 @@ class PortraitThumbnail extends StatelessWidget {
                         //   onTap: e["hidden"] != true && e["topic"] == true
                         //       ? () => onTap(e)
                         //       : null,
-                        child: ThumbnailItem(item: e, domainUrl: domainUrl),
+                        child: ThumbnailItem(item: e),
                       ))
                   // )
                   .toList(),

@@ -9,13 +9,11 @@ class LandscapePage extends StatelessWidget {
   const LandscapePage(
       {Key? key,
       required this.item,
-      required this.onTap,
-      required this.domainUrl})
+      required this.onTap,})
       : super(key: key);
 
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic>) onTap;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +22,7 @@ class LandscapePage extends StatelessWidget {
           image: item["backgroundImage"] == null
               ? null
               : DecorationImage(
-                  image: CachedNetworkImageProvider(
-                      domainUrl + item["backgroundImage"],
+                  image: CachedNetworkImageProvider(item["backgroundImage"],
                       cacheManager: Get.find<CacheManager>()),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
@@ -47,7 +44,7 @@ class LandscapePage extends StatelessWidget {
                         ? () => onTap(e)
                         : null,
                     child: PresentationItem(
-                        item: e, domainUrl: domainUrl, onTap: onTap),
+                        item: e, onTap: onTap),
                   )))
               .toList(),
         );
@@ -58,11 +55,10 @@ class LandscapePage extends StatelessWidget {
 
 class LandscapeThumbnail extends StatelessWidget {
   const LandscapeThumbnail(
-      {Key? key, required this.item, required this.domainUrl})
+      {Key? key, required this.item})
       : super(key: key);
 
   final Map<String, dynamic> item;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +68,7 @@ class LandscapeThumbnail extends StatelessWidget {
               ? null
               : DecorationImage(
                   image: CachedNetworkImageProvider(
-                      domainUrl + item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
+                    item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
           border: Border.all(color: Colors.black87)),
@@ -92,7 +88,7 @@ class LandscapeThumbnail extends StatelessWidget {
                     //   onTap: e["hidden"] != true && e["topic"] == true
                     //       ? () => onTap(e)
                     //       : null,
-                    child: ThumbnailItem(item: e, domainUrl: domainUrl),
+                    child: ThumbnailItem(item: e),
                   ))
               .toList(),
         );

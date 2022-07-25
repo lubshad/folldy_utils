@@ -12,7 +12,6 @@ class PresentationItem extends StatelessWidget {
       {Key? key,
       required this.item,
       this.onTap,
-      required this.domainUrl,
       this.previousPage,
       this.onScreenTap,
       this.nextPage})
@@ -20,7 +19,6 @@ class PresentationItem extends StatelessWidget {
 
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic> item)? onTap;
-  final String domainUrl;
   final VoidCallback? previousPage;
   final VoidCallback? nextPage;
   final VoidCallback? onScreenTap;
@@ -36,12 +34,11 @@ class PresentationItem extends StatelessWidget {
           onScreenTap: onScreenTap!,
           item: item,
           onTap: onTap!,
-          domainUrl: domainUrl,
           previousPage: previousPage!,
           nextPage: nextPage!,
         );
       case ElementType.landscapePage:
-        return LandscapePage(onTap: onTap!, item: item, domainUrl: domainUrl);
+        return LandscapePage(onTap: onTap!, item: item);
       case ElementType.rectangle:
         return Container(
           decoration: BoxDecoration(
@@ -56,17 +53,16 @@ class PresentationItem extends StatelessWidget {
       case ElementType.svg:
         return SvgPicture.network(item["svg"]);
       case ElementType.pngText:
-        return PngTextElement(item: item, domainUrl: domainUrl);
+        return PngTextElement(item: item,);
     }
   }
 }
 
 class ThumbnailItem extends StatelessWidget {
-  const ThumbnailItem({Key? key, required this.item, required this.domainUrl})
+  const ThumbnailItem({Key? key, required this.item, })
       : super(key: key);
 
   final Map<String, dynamic> item;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +73,9 @@ class ThumbnailItem extends StatelessWidget {
       case ElementType.portraitPage:
         return PortraitThumbnail(
           item: item,
-          domainUrl: domainUrl,
         );
       case ElementType.landscapePage:
-        return LandscapeThumbnail(item: item, domainUrl: domainUrl);
+        return LandscapeThumbnail(item: item);
       case ElementType.rectangle:
         return Container(
           decoration: BoxDecoration(
@@ -95,7 +90,7 @@ class ThumbnailItem extends StatelessWidget {
       case ElementType.svg:
         return SvgPicture.network(item["svg"]);
       case ElementType.pngText:
-        return PngTextElementThumbnail(item: item, domainUrl: domainUrl);
+        return PngTextElementThumbnail(item: item);
     }
   }
 }

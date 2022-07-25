@@ -5,16 +5,15 @@ import 'package:folldy_utils/presentation/elements/element_utils.dart';
 import '../../utils/constants.dart';
 
 class PngTextElement extends StatelessWidget {
-  const PngTextElement({Key? key, required this.item, required this.domainUrl})
+  const PngTextElement({Key? key, required this.item})
       : super(key: key);
   final Map<String, dynamic> item;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
     return Builder(builder: (context) {
       return item["gallery_image"] == true
-          ? GalleryImageElement(item: item, domainUrl: domainUrl)
+          ? GalleryImageElement(item: item,)
           : Visibility(
               visible: item["hidden"] != true,
               child: Stack(
@@ -22,7 +21,7 @@ class PngTextElement extends StatelessWidget {
                 children: [
                   if (item["png"] != null)
                     CachedNetworkImage(
-                      imageUrl: domainUrl + item["png"],
+                      imageUrl:  item["png"],
                       fit: BoxFit.values[item["fit"]],
                       cacheManager: Get.find<CacheManager>(),
                     ),
@@ -34,7 +33,6 @@ class PngTextElement extends StatelessWidget {
                         width: item["child"]["width"],
                         child: PresentationItem(
                           item: item["child"],
-                          domainUrl: domainUrl,
                         )),
                 ],
               ),
@@ -45,10 +43,9 @@ class PngTextElement extends StatelessWidget {
 
 class GalleryImageElement extends StatelessWidget {
   final Map<String, dynamic> item;
-  final String domainUrl;
 
   const GalleryImageElement(
-      {Key? key, required this.item, required this.domainUrl})
+      {Key? key, required this.item, required })
       : super(key: key);
 
   @override
@@ -57,7 +54,7 @@ class GalleryImageElement extends StatelessWidget {
         closedColor: Colors.transparent,
         closedElevation: 0,
         closedBuilder: (context, action) => CachedNetworkImage(
-              imageUrl: domainUrl + item["png"],
+              imageUrl:  item["png"],
               fit: BoxFit.values[item["fit"]],
               cacheManager: Get.find<CacheManager>(),
             ),
@@ -72,7 +69,7 @@ class GalleryImageElement extends StatelessWidget {
                 child: Stack(
                   children: [
                     CachedNetworkImage(
-                      imageUrl: domainUrl + item["png"],
+                      imageUrl:   item["png"],
                       fit: BoxFit.values[item["fit"]],
                       cacheManager: Get.find<CacheManager>(),
                     ),
@@ -90,10 +87,9 @@ class GalleryImageElement extends StatelessWidget {
 
 class PngTextElementThumbnail extends StatelessWidget {
   const PngTextElementThumbnail(
-      {Key? key, required this.item, required this.domainUrl})
+      {Key? key, required this.item})
       : super(key: key);
   final Map<String, dynamic> item;
-  final String domainUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +99,7 @@ class PngTextElementThumbnail extends StatelessWidget {
         children: [
           if (item["png"] != null)
             CachedNetworkImage(
-              imageUrl: domainUrl + item["png"],
+              imageUrl:item["png"],
               fit: BoxFit.values[item["fit"]],
               cacheManager: Get.find<CacheManager>(),
             ),
@@ -115,7 +111,6 @@ class PngTextElementThumbnail extends StatelessWidget {
                 width: item["child"]["width"],
                 child: PresentationItem(
                   item: item["child"],
-                  domainUrl: domainUrl,
                 )),
         ],
       );
