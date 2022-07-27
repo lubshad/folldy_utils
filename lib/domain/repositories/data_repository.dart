@@ -108,13 +108,13 @@ abstract class DataRepository {
   Future<Either<AppError, Map<String, dynamic>>> getSubjectDetails(
       Map<String, dynamic> map);
 
-  Future<Either<AppError, Map<String, dynamic>>> institutionFacultyLogin(
+  Future<Either<AppError, Map<String, dynamic>>> userLogin(
       Map<String, dynamic> map);
 
   Future<Either<AppError, Map<String, dynamic>>> assignSubjectToFaculty(
       Map<String, dynamic> map);
 
-  Future<Either<AppError, dynamic>> getFacultyDashboard(
+  Future<Either<AppError, dynamic>> getUserDashboard(
       Map<String, dynamic> map);
 
   Future<Either<AppError, dynamic>> getAllPages(Map<String, dynamic> json);
@@ -149,16 +149,8 @@ abstract class DataRepository {
   Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(
       Map<String, dynamic> map);
 
-  Future<Either<AppError, Map<String, dynamic>>> registerStudent(
-      Map<String, dynamic> map);
 
-  Future<Either<AppError, Map<String, dynamic>>> studentLogin(
-      Map<String, dynamic> map);
-
-  Future<Either<AppError, dynamic>> getStudentDashboard(
-      Map<String, dynamic> map);
-
-  Future<Either<AppError, Map<String, dynamic>>> registerTeacher(
+  Future<Either<AppError, Map<String, dynamic>>> registerUser(
       Map<String, dynamic> map);
 
   Future<Either<AppError, Map<String, dynamic>>> joinBatch(

@@ -1,8 +1,6 @@
 class ApiConstants {
   ApiConstants._();
 
-
-
   static const String slugUrl = "/folldy_admin/api/";
   static const String addUniversity = "university_add";
   static const String listAllAreas = "area_list";
@@ -41,9 +39,9 @@ class ApiConstants {
   static const String listInstitutionBatches = "list_institution_batches";
   static const String getBatchDetails = "batch_details";
   static const String getSubjectDetails = "subject_details";
-  static const String institutionFacultyLogin = "institution_faculty_login";
+  static const String userLogin = "user_login";
   static const String assignSubjectToFaculty = "assign_subject_to_faculty";
-  static const String getFacultyDashboard = "faculty_dashboard";
+  static const String userDashboard = "user_dashboard";
   static const String getAllPages = "get_all_pages";
   static const String getAllRecordedPresentations =
       "get_all_recorded_presentations";
@@ -58,11 +56,8 @@ class ApiConstants {
       "remove_presentation_from_chapter";
   static const String getReadModeElements = "get_read_mode_elements";
   static const String checkRegisteredUser = "check_registered_user";
-  static const String registerStudent = "register_student";
-  static const String registerTeacher = "register_teacher";
+  static const String registerUser = "register_user";
   static const String joinBatch = "join_batch";
-  static const String studentLogin = "student_login";
-  static const String studentDashboard = "student_dashboard";
   static const String loadMorePresentations = "load_more_presentations";
   static const String updateAndroidSettings = "update_android_settings";
   static const String fetchAndroidSettings = "android_settings";

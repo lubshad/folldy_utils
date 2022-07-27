@@ -19,12 +19,22 @@ class UpdateAndroidSettingsParams {
   final int minimumVersionTeacher;
   final String appUrlTeacher;
   final String updateMessageTeacher;
+  final int currentVersionStudent;
+  final int minimumVersionStudent;
+  final String appUrlStudent;
+  final String updateMessageStudent;
 
   UpdateAndroidSettingsParams(
       {required this.currentVersionTeacher,
       required this.appUrlTeacher,
       required this.updateMessageTeacher,
-      required this.minimumVersionTeacher});
+      required this.minimumVersionTeacher
+      ,
+      required this.currentVersionStudent,
+      required this.appUrlStudent,
+      required this.updateMessageStudent,
+      required this.minimumVersionStudent
+      });
 
   toMap() {
     return {
@@ -32,6 +42,10 @@ class UpdateAndroidSettingsParams {
       "minimumVersionTeacher": minimumVersionTeacher,
       "appUrlTeacher": appUrlTeacher,
       "updateMessageTeacher": updateMessageTeacher,
+      "currentVersionStudent": currentVersionStudent,
+      "minimumVersionStudent": minimumVersionStudent,
+      "appUrlStudent": appUrlStudent,
+      "updateMessageStudent": updateMessageStudent,
     };
   }
 }

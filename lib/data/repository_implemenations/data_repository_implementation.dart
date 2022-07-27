@@ -228,9 +228,9 @@ class DataRepositoryImplementation extends DataRepository
   }
 
   @override
-  Future<Either<AppError, Map<String, dynamic>>> institutionFacultyLogin(
+  Future<Either<AppError, Map<String, dynamic>>> userLogin(
       Map<String, dynamic> map) async {
-    return exceptionHandler(_remoteDataSource.institutionFacultyLogin(map));
+    return exceptionHandler(_remoteDataSource.userLogin(map));
   }
 
   @override
@@ -241,9 +241,9 @@ class DataRepositoryImplementation extends DataRepository
   }
 
   @override
-  Future<Either<AppError, dynamic>> getFacultyDashboard(
+  Future<Either<AppError, dynamic>> getUserDashboard(
       Map<String, dynamic> map) async {
-    return await exceptionHandler(_remoteDataSource.getFacultyDashboard(map));
+    return await exceptionHandler(_remoteDataSource.getUserDashboard(map));
   }
 
   @override
@@ -317,27 +317,9 @@ class DataRepositoryImplementation extends DataRepository
   }
 
   @override
-  Future<Either<AppError, Map<String, dynamic>>> registerStudent(
+  Future<Either<AppError, Map<String, dynamic>>> registerUser(
       Map<String, dynamic> map) async {
-    return await exceptionHandler(_remoteDataSource.registerStudent(map));
-  }
-
-  @override
-  Future<Either<AppError, Map<String, dynamic>>> studentLogin(
-      Map<String, dynamic> map) async {
-    return await exceptionHandler(_remoteDataSource.studentLogin(map));
-  }
-
-  @override
-  Future<Either<AppError, dynamic>> getStudentDashboard(
-      Map<String, dynamic> map) async {
-    return await exceptionHandler(_remoteDataSource.getStudentDashboard(map));
-  }
-
-  @override
-  Future<Either<AppError, Map<String, dynamic>>> registerTeacher(
-      Map<String, dynamic> map) async {
-    return await exceptionHandler(_remoteDataSource.registerTeacher(map));
+    return await exceptionHandler(_remoteDataSource.registerUser(map));
   }
 
   @override
@@ -345,110 +327,100 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> json) async {
     return await exceptionHandler(_remoteDataSource.joinBatch(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> loadMorePresentations(map) async {
     return await exceptionHandler(_remoteDataSource.loadMorePresentations(map));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> updateAndroidSettings(map) async {
     return await exceptionHandler(_remoteDataSource.updateAndroidSettings(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> fetchAndroidSettings(json) async {
     return await exceptionHandler(_remoteDataSource.fetchAndroidSettings(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> checkVersion(map) async {
     return await exceptionHandler(_remoteDataSource.checkVersion(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> listReadmodeItems(map) async {
     return await exceptionHandler(_remoteDataSource.listReadmodeItems(map));
   }
-  
+
   @override
   Future<Either<AppError, Map<String, dynamic>>> joinBatchRequest(map) async {
     return await exceptionHandler(_remoteDataSource.joinBatchRequest(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> listJoinRequests(map) async {
     return await exceptionHandler(_remoteDataSource.listJoinRequests(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> updateRequestStatus(map) async {
     return await exceptionHandler(_remoteDataSource.updateRequestStatus(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, Map<String, dynamic>>> adminLogin(map) async {
     return await exceptionHandler(_remoteDataSource.adminLogin(map));
   }
-  
+
   @override
-  Future<Either<AppError, dynamic>> listAllUsers(map)async  {
+  Future<Either<AppError, dynamic>> listAllUsers(map) async {
     return await exceptionHandler(_remoteDataSource.listAllUsers(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> createNewUser(map) async {
     return await exceptionHandler(_remoteDataSource.createNewUser(map));
-    
   }
-  
+
   @override
   Future<Either<AppError, Map<String, dynamic>>> adminLogout(json) async {
     return await exceptionHandler(_remoteDataSource.adminLogout(json));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> changeSubject(map) async {
     return await exceptionHandler(_remoteDataSource.changeSubject(map));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> fetchBatchDetails(map) async {
     return await exceptionHandler(_remoteDataSource.fetchBatchDetails(map));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> leaveBatch(json) async {
     return await exceptionHandler(_remoteDataSource.leaveBatch(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> suspendBatch(json) async {
     return await exceptionHandler(_remoteDataSource.suspendBatch(json));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> removeUserFromBatch(json) async {
     return await exceptionHandler(_remoteDataSource.removeUserFromBatch(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> makeFacultyBatchAdmin(json) async {
-    return await exceptionHandler(_remoteDataSource.makeFacultyBatchAdmin(json));
+    return await exceptionHandler(
+        _remoteDataSource.makeFacultyBatchAdmin(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> fetchProfileDetails(json) async {
     return await exceptionHandler(_remoteDataSource.fetchProfileDetails(json));
-    
   }
-  
 }

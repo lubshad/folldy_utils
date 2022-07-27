@@ -2,24 +2,24 @@ import 'package:basic_template/basic_template.dart';
 
 import '../repositories/data_repository.dart';
 
-class RegisterTeacher
-    extends UseCase<Map<String, dynamic>, RegisterTeacherParams> {
+class RegisterUser
+    extends UseCase<Map<String, dynamic>, RegisterUserParams> {
   final DataRepository _dataRepository;
 
-  RegisterTeacher(this._dataRepository);
+  RegisterUser(this._dataRepository);
   @override
   Future<Either<AppError, Map<String, dynamic>>> call(
-      RegisterTeacherParams params) async {
-    return _dataRepository.registerTeacher(params.toMap());
+      RegisterUserParams params) async {
+    return _dataRepository.registerUser(params.toMap());
   }
 }
 
-class RegisterTeacherParams {
+class RegisterUserParams {
   final String phone;
   final String username;
   final String email;
 
-  RegisterTeacherParams({required this.phone, required this.email, required this.username});
+  RegisterUserParams({required this.phone, required this.email, required this.username});
 
   Map<String, dynamic> toMap() {
     return {

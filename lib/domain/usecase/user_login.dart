@@ -2,23 +2,23 @@ import 'package:basic_template/basic_template.dart';
 
 import '../repositories/data_repository.dart';
 
-class StudentLogin
-    extends UseCase<Map<String, dynamic>, StudentLoginParams> {
+class UserLogin
+    extends UseCase<Map<String, dynamic>, UserLoginParams> {
   final DataRepository _dataRepository;
 
-  StudentLogin(this._dataRepository);
+  UserLogin(this._dataRepository);
   @override
   Future<Either<AppError, Map<String, dynamic>>> call(
-      StudentLoginParams params) async {
-    return _dataRepository.studentLogin(params.toMap());
+      UserLoginParams params) async {
+    return _dataRepository.userLogin(params.toMap());
   }
 }
 
-class StudentLoginParams {
+class UserLoginParams {
   final String phone;
   final String uuid;
 
-  StudentLoginParams({required this.phone, required this.uuid});
+  UserLoginParams({required this.phone, required this.uuid});
 
   Map<String, dynamic> toMap() {
     return {
