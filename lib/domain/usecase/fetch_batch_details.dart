@@ -14,11 +14,11 @@ class FetchBatchDetails extends UseCase<dynamic, FetchBatchDetailsParam> {
 
 class FetchBatchDetailsParam {
   final int batchId;
-  final int facultyId;
+  final int userId;
   const FetchBatchDetailsParam(
-      {required this.batchId, required this.facultyId});
+      {required this.batchId, required this.userId});
 
   toMap() {
-    return {"batchId": batchId, "facultyId": facultyId};
+    return {"batchId": batchId, "userId": userId};
   }
 }

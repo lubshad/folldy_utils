@@ -18,7 +18,7 @@ class RecordingScreenAppBar extends StatelessWidget {
   final Stream<AudioPlayerState> playerState;
   final VoidCallback minimize;
 
-  final String profileUrl;
+  final String? profileUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -101,8 +101,12 @@ class RecordingScreenAppBar extends StatelessWidget {
                     );
                   })),
           CircleAvatar(
-            backgroundImage: CachedNetworkImageProvider(profileUrl,
-                maxHeight: 200, maxWidth: 200),
+            backgroundColor: altoGrey,
+            backgroundImage: profileUrl == null
+                ? null
+                : CachedNetworkImageProvider(profileUrl!,
+                    maxHeight: 200, maxWidth: 200),
+            child: profileUrl == null ? const Icon(Icons.person) : null,
           )
         ],
       ),
