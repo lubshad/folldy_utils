@@ -7,20 +7,21 @@ class GetUserDashboard extends UseCase<dynamic, GetUserDashboardParams> {
 
   GetUserDashboard(this._dataRepository);
   @override
-  Future<Either<AppError, dynamic>> call(
-      GetUserDashboardParams params) async {
+  Future<Either<AppError, dynamic>> call(GetUserDashboardParams params) async {
     return _dataRepository.getUserDashboard(params.toMap());
   }
 }
 
 class GetUserDashboardParams {
   final int userId;
+  final int? semester;
 
-  GetUserDashboardParams({required this.userId});
+  GetUserDashboardParams({required this.userId, this.semester});
 
   Map<String, dynamic> toMap() {
     return {
       'userId': userId,
+      "semester": semester,
     };
   }
 }
