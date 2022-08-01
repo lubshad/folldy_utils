@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const defaultAnimationDuration = Duration(milliseconds: 300);
 const defaultAnimationDurationSmall = Duration(milliseconds: 100);
+const defaultAnimationDurationLarge = Duration(milliseconds: 500);
 
 const double defaultPadding = 16;
 const double defaultPaddingLarge = 32;

@@ -2,6 +2,7 @@ import 'package:basic_template/basic_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/data/models/recording_state.dart';
+import 'package:folldy_utils/presentation/components/color_container.dart';
 
 import '../../utils/constants.dart';
 
@@ -67,11 +68,17 @@ class RecordingControlls extends StatelessWidget {
                               ? "Resume Recording"
                               : "Pause Recording")),
                     if (recordingState.isRecording)
-                      IconButton(
-                        onPressed: stopRecording,
-                        icon: const Icon(CupertinoIcons.stop_circle,
-                            color: Colors.red),
-                        iconSize: defaultPaddingLarge,
+                      ColorContainer(
+                        borderRadius: defaultPaddingLarge,
+                        color: opaqueBlack.withOpacity(.5),
+                        child: InkWell(
+                          onTap: stopRecording,
+                          child: const Icon(
+                            CupertinoIcons.stop_circle,
+                            color: Colors.red,
+                            size: defaultPaddingLarge,
+                          ),
+                        ),
                       ),
                   ],
                 ),

@@ -1,13 +1,12 @@
-
 class PresentationScreenArguments {
   final int presentationId;
   final Map<String, dynamic> thumbnail;
-  final int? subjectId;
+  final dynamic subject;
   final String name;
   final String? profileImage;
 
   PresentationScreenArguments(
-      {this.subjectId,
+      {required this.subject,
       this.profileImage,
       required this.presentationId,
       required this.thumbnail,
@@ -17,7 +16,7 @@ class PresentationScreenArguments {
     return PresentationScreenArguments(
         profileImage: json["profileImage"],
         name: json["presentation"],
-        subjectId: json["subjectId"],
+        subject: {"id": json["subjectId"]},
         presentationId: json["id"],
         thumbnail: json["thumbnail"]["portrait"]);
   }
