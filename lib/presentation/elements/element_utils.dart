@@ -14,6 +14,7 @@ class PresentationItem extends StatelessWidget {
       this.onTap,
       this.previousPage,
       this.onScreenTap,
+      this.onLongPress,
       this.nextPage})
       : super(key: key);
 
@@ -22,6 +23,7 @@ class PresentationItem extends StatelessWidget {
   final VoidCallback? previousPage;
   final VoidCallback? nextPage;
   final VoidCallback? onScreenTap;
+  final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class PresentationItem extends StatelessWidget {
         return TextElementPresnetation(text: item);
       case ElementType.portraitPage:
         return PortraitPage(
+          onLongPress: onLongPress!,
           onScreenTap: onScreenTap!,
           item: item,
           onTap: onTap!,
@@ -53,14 +56,18 @@ class PresentationItem extends StatelessWidget {
       case ElementType.svg:
         return SvgPicture.network(item["svg"]);
       case ElementType.pngText:
-        return PngTextElement(item: item,);
+        return PngTextElement(
+          item: item,
+        );
     }
   }
 }
 
 class ThumbnailItem extends StatelessWidget {
-  const ThumbnailItem({Key? key, required this.item, })
-      : super(key: key);
+  const ThumbnailItem({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
 
   final Map<String, dynamic> item;
 

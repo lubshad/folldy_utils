@@ -18,6 +18,7 @@ class PortraitPage extends StatelessWidget {
     required this.onTap,
     required this.previousPage,
     required this.nextPage,
+    required this.onLongPress,
     required this.onScreenTap,
   }) : super(key: key);
   final Map<String, dynamic> item;
@@ -25,6 +26,7 @@ class PortraitPage extends StatelessWidget {
   final VoidCallback previousPage;
   final VoidCallback nextPage;
   final VoidCallback onScreenTap;
+  final VoidCallback onLongPress;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,7 @@ class PortraitPage extends StatelessWidget {
         image: item["backgroundImage"] == null
             ? null
             : DecorationImage(
-                image: CachedNetworkImageProvider(
-                      item["backgroundImage"],
+                image: CachedNetworkImageProvider(item["backgroundImage"],
                     cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
@@ -71,6 +72,7 @@ class PortraitPage extends StatelessWidget {
                 // ),
                 child: GestureDetector(
                   onTap: onScreenTap,
+                  onLongPress: onLongPress,
                 ),
               ),
               ...items
@@ -106,8 +108,7 @@ class PortraitThumbnail extends StatelessWidget {
         image: item["backgroundImage"] == null
             ? null
             : DecorationImage(
-                image: CachedNetworkImageProvider(
-                  item["backgroundImage"],
+                image: CachedNetworkImageProvider(item["backgroundImage"],
                     cacheManager: Get.find<CacheManager>()),
                 fit: BoxFit.values[item["fit"]],
               ),

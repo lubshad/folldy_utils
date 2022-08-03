@@ -153,6 +153,8 @@ abstract class RemoteDataSource {
   FutureOr fetchProfileDetails(json);
 
   FutureOr getUserDashboard(Map<String, dynamic> map);
+
+  FutureOr updateContent(json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -624,11 +626,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         await _apiClient.post(ApiConstants.fetchProfileDetails, json);
     return response;
   }
-  
+
   @override
   FutureOr getUserDashboard(Map<String, dynamic> map) async {
-     final response =
-        await _apiClient.post(ApiConstants.userDashboard, map);
+    final response = await _apiClient.post(ApiConstants.userDashboard, map);
+    return response;
+  }
+  
+  @override
+  FutureOr updateContent(json) async {
+        final response = await _apiClient.post(ApiConstants.updateContent, json);
     return response;
   }
 }

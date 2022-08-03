@@ -114,8 +114,7 @@ abstract class DataRepository {
   Future<Either<AppError, Map<String, dynamic>>> assignSubjectToFaculty(
       Map<String, dynamic> map);
 
-  Future<Either<AppError, dynamic>> getUserDashboard(
-      Map<String, dynamic> map);
+  Future<Either<AppError, dynamic>> getUserDashboard(Map<String, dynamic> map);
 
   Future<Either<AppError, dynamic>> getAllPages(Map<String, dynamic> json);
 
@@ -148,7 +147,6 @@ abstract class DataRepository {
 
   Future<Either<AppError, Map<String, dynamic>>> checkRegisteredUser(
       Map<String, dynamic> map);
-
 
   Future<Either<AppError, Map<String, dynamic>>> registerUser(
       Map<String, dynamic> map);
@@ -193,4 +191,6 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> makeFacultyBatchAdmin(json);
 
   Future<Either<AppError, dynamic>> fetchProfileDetails(json);
+
+  Future<Either<AppError, dynamic>> updateContent(json);
 }
