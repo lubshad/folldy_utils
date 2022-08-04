@@ -193,4 +193,6 @@ abstract class DataRepository {
   Future<Either<AppError, dynamic>> fetchProfileDetails(json);
 
   Future<Either<AppError, dynamic>> updateContent(json);
+
+  Future<Either<AppError, dynamic>> changeInsitution(json);
 }

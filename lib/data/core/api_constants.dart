@@ -78,4 +78,5 @@ class ApiConstants {
   static const String makeFacultyBatchAdmin = "make_faculty_batch_admin";
   static const String fetchProfileDetails = "fetch_profile_details";
   static const String updateContent = "update_content";
+  static const String changeInstitution = "change_institution";
 }
