@@ -16,7 +16,7 @@ class PresentationScreenArguments {
     return PresentationScreenArguments(
         profileImage: json["profileImage"],
         name: json["presentation"],
-        subject: {"id": json["subjectId"]},
+        subject: {"id": json["subjectId"], "name": ""},
         presentationId: json["id"],
         thumbnail: json["thumbnail"]["portrait"]);
   }

@@ -18,11 +18,11 @@ class InstitutionBatchListingParams {
   final int facultyId;
 
   InstitutionBatchListingParams(
-      { required this.facultyId});
+      {required this.facultyId});
 
   Map<String, dynamic> toMap() {
     return {
-      "facultyId" : facultyId,
+      "facultyId": facultyId,
     };
   }
 }

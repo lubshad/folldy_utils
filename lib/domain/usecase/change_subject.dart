@@ -13,14 +13,17 @@ class ChangeSubject extends UseCase<dynamic, ChangeSubjectParams> {
 }
 
 enum SubjectPopupOption {
-  remove,
+  removeFromWall,
+  addToWall,
 }
 
 extension SubjectPopupExtension on SubjectPopupOption {
   String get text {
     switch (this) {
-      case SubjectPopupOption.remove:
-        return "Remove";
+      case SubjectPopupOption.removeFromWall:
+        return "Remove from wall";
+      case SubjectPopupOption.addToWall:
+        return "Add to wall";
     }
   }
 }
@@ -32,7 +35,10 @@ class ChangeSubjectParams {
   final int batchId;
 
   ChangeSubjectParams(
-      {required this.subjectPopupOption, required this.subjectId, required this.batchId, required this.facultyId});
+      {required this.subjectPopupOption,
+      required this.subjectId,
+      required this.batchId,
+      required this.facultyId});
 
   toMap() {
     return {

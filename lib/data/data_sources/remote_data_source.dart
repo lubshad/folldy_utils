@@ -157,6 +157,8 @@ abstract class RemoteDataSource {
   FutureOr updateContent(json);
 
   FutureOr changeInstitution(json);
+
+  // FutureOr removeSubjectFromWall(json);
 }
 
 class RemoteDataSourceImplementation implements RemoteDataSource {
@@ -647,4 +649,11 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
         await _apiClient.post(ApiConstants.changeInstitution, json);
     return response;
   }
+  
+  // @override
+  // FutureOr removeSubjectFromWall(json) async {
+  //   final response =
+  //       await _apiClient.post(ApiConstants.removeSubjectFromWall, json);
+  //   return response;
+  // }
 }

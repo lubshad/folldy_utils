@@ -434,4 +434,9 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.changeInstitution(json));
     
   }
+  
+  // @override
+  // Future<Either<AppError, dynamic>> removeSubjectFromWall(json) async {
+  //   return await exceptionHandler(_remoteDataSource.removeSubjectFromWall(json));
+  // }
 }

@@ -17,10 +17,11 @@ class GetBatchDetails
 class GetBatchDetailsParams {
   final int batchId;
   final int facultyId;
+  final int? semester;
 
-  GetBatchDetailsParams({required this.batchId, required this.facultyId});
+  GetBatchDetailsParams({required this.batchId, required this.facultyId, this.semester});
 
   Map<String, dynamic> toMap() {
-    return {'id': batchId, "facultyId": facultyId};
+    return {'id': batchId, "facultyId": facultyId , "semester": semester};
   }
 }
