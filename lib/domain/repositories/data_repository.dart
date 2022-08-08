@@ -196,5 +196,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> changeInsitution(json);
 
+  Future<Either<AppError, dynamic>> fetchBatchSettings(json);
+
   // Future<Either<AppError, dynamic>> removeSubjectFromWall(json);
 }

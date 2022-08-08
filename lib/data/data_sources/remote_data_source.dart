@@ -158,6 +158,8 @@ abstract class RemoteDataSource {
 
   FutureOr changeInstitution(json);
 
+  FutureOr fetchBatchSettings(json);
+
   // FutureOr removeSubjectFromWall(json);
 }
 
@@ -650,6 +652,13 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     return response;
   }
   
+  @override
+  FutureOr fetchBatchSettings(json)async  {
+    final response =
+        await _apiClient.post(ApiConstants.fetchBatchSettings, json);
+    return response;
+  }
+
   // @override
   // FutureOr removeSubjectFromWall(json) async {
   //   final response =

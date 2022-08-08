@@ -15,6 +15,7 @@ class ChangeSubject extends UseCase<dynamic, ChangeSubjectParams> {
 enum SubjectPopupOption {
   removeFromWall,
   addToWall,
+  remove,
 }
 
 extension SubjectPopupExtension on SubjectPopupOption {
@@ -24,6 +25,8 @@ extension SubjectPopupExtension on SubjectPopupOption {
         return "Remove from wall";
       case SubjectPopupOption.addToWall:
         return "Add to wall";
+      case SubjectPopupOption.remove:
+        return "Remove";
     }
   }
 }

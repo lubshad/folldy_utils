@@ -80,4 +80,5 @@ class ApiConstants {
   static const String updateContent = "update_content";
   static const String changeInstitution = "change_institution";
   static const String removeSubjectFromWall = "remove_subject_from_wall";
+  static const String fetchBatchSettings = "fetch_batch_settings";
 }
