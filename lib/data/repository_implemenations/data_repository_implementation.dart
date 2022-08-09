@@ -404,11 +404,6 @@ class DataRepositoryImplementation extends DataRepository
   }
 
   @override
-  Future<Either<AppError, dynamic>> suspendBatch(json) async {
-    return await exceptionHandler(_remoteDataSource.suspendBatch(json));
-  }
-
-  @override
   Future<Either<AppError, dynamic>> removeUserFromBatch(json) async {
     return await exceptionHandler(_remoteDataSource.removeUserFromBatch(json));
   }
@@ -437,6 +432,17 @@ class DataRepositoryImplementation extends DataRepository
   @override
   Future<Either<AppError, dynamic>> fetchBatchSettings(json) async {
     return await exceptionHandler(_remoteDataSource.fetchBatchSettings(json));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> closeSemester(json) async {
+    return await exceptionHandler(_remoteDataSource.closeSemester(json));
+  }
+  
+  @override
+  Future<Either<AppError, dynamic>> updateBatchStatus(json) async {
+    return await exceptionHandler(_remoteDataSource.updateBatchStatus(json));
+    
   }
 
   // @override

@@ -73,7 +73,6 @@ class ApiConstants {
   static const String changeSubject = "change_subject";
   static const String fetchBatchDetails = "fetch_batch_details";
   static const String leaveBatch = "leave_batch";
-  static const String suspendBatch = "suspend_batch";
   static const String removeUserFromBatch = "remove_user_from_batch";
   static const String makeFacultyBatchAdmin = "make_faculty_batch_admin";
   static const String fetchProfileDetails = "fetch_profile_details";
@@ -81,4 +80,7 @@ class ApiConstants {
   static const String changeInstitution = "change_institution";
   static const String removeSubjectFromWall = "remove_subject_from_wall";
   static const String fetchBatchSettings = "fetch_batch_settings";
+  static const String closeSemester = "close_semester";
+  static const String updateBatchStatus = "update_batch_status";
+
 }

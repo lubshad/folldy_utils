@@ -17,18 +17,18 @@ class AssignSubjectToFaculty
 
 class AssignSubjectTOFacultyParams {
   final int facultyId;
-  final int subjectId;
+  final List<int> subjectIds;
   final int batchId;
 
   AssignSubjectTOFacultyParams(
       {required this.facultyId,
-      required this.subjectId,
+      required this.subjectIds,
       required this.batchId});
 
   Map<String, dynamic> toMap() {
     return {
       'facultyId': facultyId,
-      'subjectId': subjectId,
+      'subjectIds': subjectIds,
       'batchId': batchId,
     };
   }
