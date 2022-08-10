@@ -16,14 +16,14 @@ class UpdateRequestStatus extends UseCase<dynamic, UpdateRequestStatusParams> {
 
 class UpdateRequestStatusParams {
   final RequestPopupItem action;
-  final int requestId;
+  final List<int> requestIds;
 
-  UpdateRequestStatusParams({required this.action, required this.requestId});
+  UpdateRequestStatusParams({required this.action, required this.requestIds});
 
   toMap() {
     return {
       "action": action.index,
-      "requestId": requestId,
+      "requestIds": requestIds,
     };
   }
 }
