@@ -433,27 +433,36 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> fetchBatchSettings(json) async {
     return await exceptionHandler(_remoteDataSource.fetchBatchSettings(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> closeSemester(json) async {
     return await exceptionHandler(_remoteDataSource.closeSemester(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> updateBatchStatus(json) async {
     return await exceptionHandler(_remoteDataSource.updateBatchStatus(json));
-    
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> updateSubjectSettings(json) async {
-    return await exceptionHandler(_remoteDataSource.updateSubjectSettings(json));
-    
+    return await exceptionHandler(
+        _remoteDataSource.updateSubjectSettings(json));
+  }
+
+  @override
+  Future<Either<AppError, dynamic>> fetchSubjectSettings(json) async {
+    return await exceptionHandler(_remoteDataSource.fetchSubjectSettings(json));
+  }
+
+  @override
+  Future<Either<AppError, dynamic>> suspendStudent(json) async {
+    return await exceptionHandler(_remoteDataSource.suspendStudent(json));
   }
   
   @override
-  Future<Either<AppError, dynamic>> fetchSubjectSettings(json)async  {
-    return await exceptionHandler(_remoteDataSource.fetchSubjectSettings(json));
+  Future<Either<AppError, dynamic>> dontPublishToday(json) async {
+    return await exceptionHandler(_remoteDataSource.dontPublishToday(json));
     
   }
 

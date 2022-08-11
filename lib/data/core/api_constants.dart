@@ -84,4 +84,6 @@ class ApiConstants {
   static const String updateBatchStatus = "update_batch_status";
   static const String updateSubjectSettings = "update_subject_settings";
   static const String fetchSubjectSettings = "fetch_subject_settings";
+  static const String suspendStudent = "suspend_student";
+  static const String dontPublishToday = "dont_publish_today";
 }

@@ -1,5 +1,6 @@
 import 'package:basic_template/basic_template.dart';
 import 'package:flutter/material.dart';
+import 'package:folldy_utils/presentation/elements/element_utils.dart';
 
 import '../../utils/constants.dart';
 
@@ -9,10 +10,16 @@ class ReadModeElement {
   final String? text;
   final String? imageUrl;
   final int displayOrder;
+  final double? width;
+  final double? height;
+  final dynamic child;
 
   ReadModeElement(
       {this.id,
       this.text,
+      this.height,
+      this.width,
+      this.child,
       this.imageUrl,
       required this.readModeElementType,
       this.displayOrder = 0});
@@ -23,6 +30,9 @@ class ReadModeElement {
       'readModeElementType': readModeElementType.index,
       'text': text,
       'imageUrl': imageUrl,
+      "width": width,
+      "height": height,
+      "child": child,
       'displayOrder': displayOrder,
     };
   }
@@ -34,6 +44,9 @@ class ReadModeElement {
       readModeElementType:
           ReadModeElementType.values[map['readModeElementType']],
       text: map['text'],
+      width: map["width"],
+      height: map["height"],
+      child: map["child"],
       imageUrl: map['imageUrl'],
     );
   }
@@ -43,7 +56,7 @@ class ReadModeElement {
   }
 }
 
-enum ReadModeElementType { title, image, description, heading }
+enum ReadModeElementType { title, image, description, heading, element }
 
 extension ReadModeElementExtension on ReadModeElementType {
   TextStyle get textStyle {
@@ -61,6 +74,10 @@ extension ReadModeElementExtension on ReadModeElementType {
             .bodyText1!
             .copyWith(fontFamily: GoogleFonts.tinos().fontFamily);
       case ReadModeElementType.heading:
+        return Theme.of(Get.context!).textTheme.headline6!.copyWith(
+            fontFamily: GoogleFonts.tinos().fontFamily,
+            fontWeight: FontWeight.w600);
+      case ReadModeElementType.element:
         return Theme.of(Get.context!).textTheme.headline6!.copyWith(
             fontFamily: GoogleFonts.tinos().fontFamily,
             fontWeight: FontWeight.w600);
@@ -87,13 +104,34 @@ class ReadModeItem extends StatelessWidget {
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
           case ReadModeElementType.image:
-            return CachedNetworkImage(imageUrl:item.imageUrl!);
+            return CachedNetworkImage(imageUrl: item.imageUrl!);
           case ReadModeElementType.description:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
           case ReadModeElementType.heading:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
+          case ReadModeElementType.element:
+            return SizedBox(
+              width: item.width,
+              height: item.height,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  CachedNetworkImage(
+                    imageUrl: item.imageUrl!,
+                    fit: BoxFit.fill,
+                  ),
+                  Positioned(
+                    top: item.child["top"],
+                    left: item.child["left"],
+                    height: item.child["height"] + defaultPaddingLarge,
+                    width: item.child["width"] + defaultPaddingLarge,
+                    child: ThumbnailItem(item: item.child),
+                  )
+                ],
+              ),
+            );
         }
       }),
     );
