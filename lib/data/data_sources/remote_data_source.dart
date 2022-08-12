@@ -170,6 +170,8 @@ abstract class RemoteDataSource {
 
   FutureOr dontPublishToday(json);
 
+  FutureOr cahngeAudioState(Map<String, dynamic> map);
+
   // FutureOr removeSubjectFromWall(json);
 }
 
@@ -695,10 +697,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.suspendStudent, json);
     return response;
   }
-  
+
   @override
   FutureOr dontPublishToday(json) async {
-     final response = await _apiClient.post(ApiConstants.dontPublishToday, json);
+    final response = await _apiClient.post(ApiConstants.dontPublishToday, json);
+    return response;
+  }
+
+  @override
+  FutureOr cahngeAudioState(Map<String, dynamic> map) async {
+    final response = await _apiClient.post(ApiConstants.changeAudioStatus, map);
     return response;
   }
 

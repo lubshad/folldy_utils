@@ -208,5 +208,8 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> dontPublishToday(json);
 
+  Future<Either<AppError, Map<String, dynamic>>> changeAudioState(
+      Map<String, dynamic> map);
+
   // Future<Either<AppError, dynamic>> removeSubjectFromWall(json);
 }

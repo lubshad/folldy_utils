@@ -86,4 +86,6 @@ class ApiConstants {
   static const String fetchSubjectSettings = "fetch_subject_settings";
   static const String suspendStudent = "suspend_student";
   static const String dontPublishToday = "dont_publish_today";
+  static const String changeAudioStatus = "change_audio_status";
+
 }

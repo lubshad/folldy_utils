@@ -459,11 +459,16 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> suspendStudent(json) async {
     return await exceptionHandler(_remoteDataSource.suspendStudent(json));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> dontPublishToday(json) async {
     return await exceptionHandler(_remoteDataSource.dontPublishToday(json));
-    
+  }
+
+  @override
+  Future<Either<AppError, Map<String, dynamic>>> changeAudioState(
+      Map<String, dynamic> map) async {
+    return await exceptionHandler(_remoteDataSource.cahngeAudioState(map));
   }
 
   // @override

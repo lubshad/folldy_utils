@@ -12,3 +12,5 @@ class RecordingState {
       required this.isVisible,
       required this.recordedDuration});
 }
+
+

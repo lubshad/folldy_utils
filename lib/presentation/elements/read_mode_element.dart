@@ -112,25 +112,15 @@ class ReadModeItem extends StatelessWidget {
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
           case ReadModeElementType.element:
-            return SizedBox(
+            return Container(
               width: item.width,
               height: item.height,
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: item.imageUrl!,
-                    fit: BoxFit.fill,
-                  ),
-                  Positioned(
-                    top: item.child["top"],
-                    left: item.child["left"],
-                    height: item.child["height"] + defaultPaddingLarge,
-                    width: item.child["width"] + defaultPaddingLarge,
-                    child: ThumbnailItem(item: item.child),
-                  )
-                ],
-              ),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: CachedNetworkImageProvider(item.imageUrl!),
+                      fit: BoxFit.fill)),
+              child: FittedBox(child: ThumbnailItem(item: item.child)),
             );
         }
       }),
