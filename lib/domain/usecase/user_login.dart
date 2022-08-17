@@ -16,14 +16,14 @@ class UserLogin
 
 class UserLoginParams {
   final String phone;
-  final String uuid;
+  final String idToken;
 
-  UserLoginParams({required this.phone, required this.uuid});
+  UserLoginParams({required this.phone, required this.idToken});
 
   Map<String, dynamic> toMap() {
     return {
       'phone': phone,
-      "uuid": uuid
+      "idToken": idToken
     };
   }
 }

@@ -75,7 +75,7 @@ class RecordingControlls extends StatelessWidget {
                           onTap: stopRecording,
                           child: const Icon(
                             CupertinoIcons.stop_circle,
-                            color: Colors.red,
+                            color: Colors.white,
                             size: defaultPaddingLarge,
                           ),
                         ),
