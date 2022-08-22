@@ -16,7 +16,7 @@ enum SubjectPopupOption {
   removeFromWall,
   addToWall,
   remove,
-  settings,
+  publishingDays,
 }
 
 extension SubjectPopupExtension on SubjectPopupOption {
@@ -28,8 +28,8 @@ extension SubjectPopupExtension on SubjectPopupOption {
         return "Add to wall";
       case SubjectPopupOption.remove:
         return "Remove";
-      case SubjectPopupOption.settings:
-        return "Settings";
+      case SubjectPopupOption.publishingDays:
+        return "Publishing Days";
     }
   }
 }

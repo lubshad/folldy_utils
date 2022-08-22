@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class AppLogo extends StatelessWidget {
@@ -8,9 +7,9 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Clez",
-      style: TextStyle(color: Colors.white, fontSize: 80),
+    return Image.asset(
+      "assets/pngs/clezz_white.png",
+      width: 160,
     );
   }
 }
