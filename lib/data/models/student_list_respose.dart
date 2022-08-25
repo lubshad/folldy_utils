@@ -16,7 +16,7 @@ class Student {
     required this.name,
     required this.phone,
     required this.institution,
-    required this.uuid,
+    required this.idToken,
     required this.email,
     required this.profileImage,
   });
@@ -25,12 +25,12 @@ class Student {
   final String name;
   final String phone;
   final int? institution;
-  final String? uuid;
+  final String? idToken;
   final String? email;
   final String? profileImage;
 
   factory Student.fromJson(Map<String, dynamic> json) => Student(
-      uuid: json["uuid"],
+      idToken: json["idToken"],
       id: json["id"],
       email: json["email"],
       name: json["username"],
@@ -44,7 +44,7 @@ class Student {
         "username": name,
         "phone": phone,
         "institution": institution,
-        "uuid": uuid,
+        "idToken": idToken,
         "profile_image": profileImage,
       };
 }
