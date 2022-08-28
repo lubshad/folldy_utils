@@ -54,6 +54,30 @@ class RecordingScreenAppBar extends StatelessWidget {
                                       )),
                                 )),
                             const Spacer(),
+                            if (snapshot.data?.navigateToContentEditing != null)
+                              ColorContainer(
+                                  borderRadius: defaultPaddingLarge,
+                                  color: opaqueBlack,
+                                  child: SizedBox(
+                                    width: defaultPaddingLarge,
+                                    height: defaultPaddingLarge,
+                                    child: IconButton(
+                                      padding: EdgeInsets.zero,
+                                      onPressed: snapshot
+                                          .data?.navigateToContentEditing,
+                                      // icon: SvgPicture.asset(
+                                      //   "assets/svgs/readmode.svg",
+                                      //   height: defaultPadding * 1.3,
+                                      //   width: defaultPadding * 1.3,
+                                      // ),
+                                      icon: const Icon(
+                                        Icons.edit,
+                                        size: defaultPadding,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  )),
+                            defaultSpacerHorizontalSmall,
                             ColorContainer(
                                 borderRadius: defaultPaddingLarge,
                                 color: opaqueBlack,
