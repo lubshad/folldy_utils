@@ -172,6 +172,8 @@ abstract class RemoteDataSource {
 
   FutureOr cahngeAudioState(Map<String, dynamic> map);
 
+  FutureOr copySubject(json);
+
   // FutureOr removeSubjectFromWall(json);
 }
 
@@ -707,6 +709,12 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   @override
   FutureOr cahngeAudioState(Map<String, dynamic> map) async {
     final response = await _apiClient.post(ApiConstants.changeAudioStatus, map);
+    return response;
+  }
+  
+  @override
+  FutureOr copySubject(json) async {
+    final response = await _apiClient.post(ApiConstants.copySubject, json);
     return response;
   }
 
