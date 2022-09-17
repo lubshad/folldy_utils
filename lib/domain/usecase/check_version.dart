@@ -1,4 +1,3 @@
-
 import 'package:basic_template/basic_template.dart';
 
 import '../repositories/data_repository.dart';
@@ -22,12 +21,21 @@ enum DevicePlatform {
 class CheckVersionParams {
   final int buildNumber;
   final DevicePlatform platform;
+  final String userId;
+  final String fcmToken;
 
-  CheckVersionParams({required this.buildNumber, required this.platform});
+  CheckVersionParams({
+    required this.buildNumber,
+    required this.platform,
+    required this.fcmToken,
+    required this.userId,
+  });
   toMap() {
     return {
       "buildNumber": buildNumber,
       "platform": platform.index,
+      "userId": userId,
+      "fcmToken": fcmToken,
     };
   }
 }
