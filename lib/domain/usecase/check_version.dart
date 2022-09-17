@@ -21,8 +21,8 @@ enum DevicePlatform {
 class CheckVersionParams {
   final int buildNumber;
   final DevicePlatform platform;
-  final String userId;
-  final String fcmToken;
+  final int? userId;
+  final String? fcmToken;
 
   CheckVersionParams({
     required this.buildNumber,
