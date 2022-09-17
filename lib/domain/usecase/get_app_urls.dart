@@ -8,8 +8,3 @@ class GetAppUrls extends UseCase<dynamic, NoParams> {
     return _dataRepository.getAppUrls(params.toJson());
   }
 }
-class NoParams {
-  toJson() {
-    return {};
-  }
-}
