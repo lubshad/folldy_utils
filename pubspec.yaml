@@ -12,7 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   basic_template: 
-    path: ../basic_template
+    git:
+      url: https://github.com/lubshad/basic_template.git
   just_audio: ^0.9.21
   palette_generator: ^0.3.3+1
   wakelock: ^0.6.2
