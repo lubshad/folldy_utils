@@ -12,11 +12,14 @@ class CloseSemester extends UseCase<dynamic, CloseSemesterParams> {
 
 class CloseSemesterParams {
   final List<int> subjectIds;
+  final int batchId;
+  final int semester;
 
-  CloseSemesterParams(this.subjectIds);
+  CloseSemesterParams(
+      {required this.subjectIds,
+      required this.batchId,
+      required this.semester});
   toJson() {
-    return {
-      "subjectIds": subjectIds
-    };
+    return {"subjectIds": subjectIds, "batchId": batchId, "semester": semester};
   }
 }
