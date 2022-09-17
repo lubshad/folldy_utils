@@ -88,4 +88,5 @@ class ApiConstants {
   static const String dontPublishToday = "dont_publish_today";
   static const String changeAudioStatus = "change_audio_status";
   static const String copySubject = "copy_subject";
+  static const String getAppUrls = "app_urls";
 }

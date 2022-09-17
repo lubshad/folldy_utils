@@ -174,6 +174,8 @@ abstract class RemoteDataSource {
 
   FutureOr copySubject(json);
 
+  FutureOr getAppUrls(json);
+
   // FutureOr removeSubjectFromWall(json);
 }
 
@@ -711,10 +713,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.changeAudioStatus, map);
     return response;
   }
-  
+
   @override
   FutureOr copySubject(json) async {
     final response = await _apiClient.post(ApiConstants.copySubject, json);
+    return response;
+  }
+  
+  @override
+  FutureOr getAppUrls(json) async {
+    final response = await _apiClient.post(ApiConstants.getAppUrls, json);
     return response;
   }
 

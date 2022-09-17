@@ -470,11 +470,15 @@ class DataRepositoryImplementation extends DataRepository
       Map<String, dynamic> map) async {
     return await exceptionHandler(_remoteDataSource.cahngeAudioState(map));
   }
-  
+
   @override
   Future<Either<AppError, dynamic>> copySubject(json) async {
     return await exceptionHandler(_remoteDataSource.copySubject(json));
-    
+  }
+
+  @override
+  Future<Either<AppError, dynamic>> getAppUrls(json) async {
+    return await exceptionHandler(_remoteDataSource.getAppUrls(json));
   }
 
   // @override
