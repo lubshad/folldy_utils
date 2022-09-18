@@ -89,4 +89,5 @@ class ApiConstants {
   static const String changeAudioStatus = "change_audio_status";
   static const String copySubject = "copy_subject";
   static const String getAppUrls = "app_urls";
+  static const String deleteCustomUser = "delete_custom_user";
 }

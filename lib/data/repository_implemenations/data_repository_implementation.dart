@@ -480,6 +480,12 @@ class DataRepositoryImplementation extends DataRepository
   Future<Either<AppError, dynamic>> getAppUrls(json) async {
     return await exceptionHandler(_remoteDataSource.getAppUrls(json));
   }
+  
+  @override
+  Future<Either<AppError, dynamic>> deleteCustomUser(json) async {
+    return await exceptionHandler(_remoteDataSource.deleteCustomUser(json));
+    
+  }
 
   // @override
   // Future<Either<AppError, dynamic>> removeSubjectFromWall(json) async {
