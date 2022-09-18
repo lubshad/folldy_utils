@@ -16,7 +16,7 @@ class Faculty {
     required this.name,
     required this.phone,
     required this.institution,
-    required this.uuid,
+    required this.idToken,
     required this.email,
     required this.profileImage,
   });
@@ -25,12 +25,12 @@ class Faculty {
   final String name;
   final String phone;
   final int? institution;
-  final String? uuid;
+  final String? idToken;
   final String? email;
   final String? profileImage;
 
   factory Faculty.fromJson(Map<String, dynamic> json) => Faculty(
-      uuid: json["uuid"],
+      idToken: json["idToken"],
       id: json["id"],
       email: json["email"],
       name: json["username"],
@@ -44,7 +44,7 @@ class Faculty {
         "username": name,
         "phone": phone,
         "institution": institution,
-        "uuid": uuid,
+        "idToken": idToken,
         "profile_image": profileImage,
       };
 }
