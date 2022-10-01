@@ -456,8 +456,8 @@ class DataRepositoryImplementation extends DataRepository
   }
 
   @override
-  Future<Either<AppError, dynamic>> suspendStudent(json) async {
-    return await exceptionHandler(_remoteDataSource.suspendStudent(json));
+  Future<Either<AppError, dynamic>> updateStudent(json) async {
+    return await exceptionHandler(_remoteDataSource.updateStudent(json));
   }
 
   @override

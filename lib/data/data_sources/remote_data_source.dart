@@ -166,7 +166,7 @@ abstract class RemoteDataSource {
 
   FutureOr fetchSubjectSettings(json);
 
-  FutureOr suspendStudent(json);
+  FutureOr updateStudent(json);
 
   FutureOr dontPublishToday(json);
 
@@ -703,8 +703,8 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
   }
 
   @override
-  FutureOr suspendStudent(json) async {
-    final response = await _apiClient.post(ApiConstants.suspendStudent, json);
+  FutureOr updateStudent(json) async {
+    final response = await _apiClient.post(ApiConstants.updateStudent, json);
     return response;
   }
 

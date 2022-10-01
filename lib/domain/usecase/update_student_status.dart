@@ -8,7 +8,7 @@ class UpdateStudentStatus extends UseCase<dynamic, UpdateStudentStatusParams> {
   @override
   Future<Either<AppError, dynamic>> call(
       UpdateStudentStatusParams params) async {
-    return _dataRepository.suspendStudent(params.toJson());
+    return _dataRepository.updateStudent(params.toJson());
   }
 }
 

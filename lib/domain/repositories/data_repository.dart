@@ -204,7 +204,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> fetchSubjectSettings(json);
 
-  Future<Either<AppError, dynamic>> suspendStudent(json);
+  Future<Either<AppError, dynamic>> updateStudent(json);
 
   Future<Either<AppError, dynamic>> dontPublishToday(json);
 
