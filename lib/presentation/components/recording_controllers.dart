@@ -34,13 +34,13 @@ class RecordingControlls extends StatelessWidget {
                 data: ElevatedButtonThemeData(
                     style: ElevatedButton.styleFrom(
                         elevation: 0,
+                        backgroundColor: opaqueBlack.withOpacity(.6),
                         padding: const EdgeInsets.only(
                             top: defaultPaddingSmall,
                             bottom: defaultPaddingSmall,
                             left: defaultPadding,
                             right: defaultPadding),
-                        shape: const StadiumBorder(),
-                        primary: opaqueBlack.withOpacity(.6))),
+                        shape: const StadiumBorder())),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [

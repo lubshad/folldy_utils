@@ -47,6 +47,7 @@ class ApiConstants {
       "get_all_recorded_presentations";
   static const String deleteRecordedAudio = "delete_recorded_audio";
   static const String changeLiveSemester = "change_live_semester";
+  static const String fetchIosSettings = "fetchIosSettings";
   static const String addPresentationToWall = "add_presentation_to_wall";
   static const String addTeachersToBatch = "add_teachers_to_batch";
   static const String updateChapterPresentationDisplayOrder =

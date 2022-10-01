@@ -217,5 +217,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> deleteCustomUser(json);
 
+  Future<Either<AppError, dynamic>> fetchIosSettings(json);
+
   // Future<Either<AppError, dynamic>> removeSubjectFromWall(json);
 }
