@@ -219,5 +219,7 @@ abstract class DataRepository {
 
   Future<Either<AppError, dynamic>> fetchIosSettings(json);
 
+  Future<Either<AppError, dynamic>> updateIosSettings(map);
+
   // Future<Either<AppError, dynamic>> removeSubjectFromWall(json);
 }

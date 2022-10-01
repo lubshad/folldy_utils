@@ -492,6 +492,12 @@ class DataRepositoryImplementation extends DataRepository
     return await exceptionHandler(_remoteDataSource.fetchIosSettings(json));
     
   }
+  
+  @override
+  Future<Either<AppError, dynamic>> updateIosSettings(map) async {
+    return await exceptionHandler(_remoteDataSource.updateIosSettings(map));
+    
+  }
 
   // @override
   // Future<Either<AppError, dynamic>> removeSubjectFromWall(json) async {

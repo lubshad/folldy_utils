@@ -180,6 +180,8 @@ abstract class RemoteDataSource {
 
   FutureOr fetchIosSettings(json);
 
+  FutureOr updateIosSettings(map);
+
   // FutureOr removeSubjectFromWall(json);
 }
 
@@ -735,10 +737,16 @@ class RemoteDataSourceImplementation implements RemoteDataSource {
     final response = await _apiClient.post(ApiConstants.deleteCustomUser, json);
     return response;
   }
-  
+
   @override
   FutureOr fetchIosSettings(json) async {
-     final response = await _apiClient.post(ApiConstants.fetchIosSettings, json);
+    final response = await _apiClient.post(ApiConstants.fetchIosSettings, json);
+    return response;
+  }
+  
+  @override
+  FutureOr updateIosSettings(map) async {
+     final response = await _apiClient.post(ApiConstants.updateIosSettings, map);
     return response;
   }
 
