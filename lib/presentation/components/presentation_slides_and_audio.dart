@@ -56,8 +56,8 @@ class PresentationSlidesAndAudio extends StatelessWidget {
                         size: defaultPadding,
                       ),
                       Builder(builder: (context) {
-                        Duration duration =
-                            parseDuration(presentation["audio"][0]["duration"]);
+                        Duration duration = parseDuration(
+                            presentation["audio"][0]["duration"] ?? "00:00:00");
                         return Text(
                           durationToMs(duration),
                           style: Theme.of(context)
