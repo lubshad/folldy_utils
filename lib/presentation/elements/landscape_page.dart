@@ -26,7 +26,8 @@ class LandscapePage extends StatelessWidget {
                       cacheManager: Get.find<CacheManager>()),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
-          border: Border.all(color: Colors.black87)),
+          // border: Border.all(color: Colors.black87)
+          ),
       height: item["height"],
       width: item["width"],
       child: Builder(builder: (context) {
@@ -71,7 +72,8 @@ class LandscapeThumbnail extends StatelessWidget {
                     item["backgroundImage"] , cacheManager: Get.find<CacheManager>()),
                   fit: BoxFit.values[item["fit"]]),
           color: Color(item["color"]),
-          border: Border.all(color: Colors.black87)),
+          // border: Border.all(color: Colors.black87)
+          ),
       height: item["height"],
       width: item["width"],
       child: Builder(builder: (context) {
