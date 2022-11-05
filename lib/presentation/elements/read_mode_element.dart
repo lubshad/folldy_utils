@@ -17,8 +17,8 @@ class ReadModeElement {
   ReadModeElement(
       {this.id,
       this.text,
-      this.height,
-      this.width,
+      this.height =250,
+      this.width = 250,
       this.child,
       this.imageUrl,
       required this.readModeElementType,
