@@ -109,7 +109,7 @@ class ReadModeItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl!,
                   width: MediaQuery.of(context).size.width > 800
-                      ? 600
+                      ? 400
                       : item.width,
                 ));
           case ReadModeElementType.description:
