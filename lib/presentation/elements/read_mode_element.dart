@@ -110,7 +110,7 @@ class ReadModeItem extends StatelessWidget {
                     imageUrl: item.imageUrl!,
                     width: item.width,
                     height: item.height,
-                    fit: BoxFit.cover));
+                    fit: BoxFit.fill));
           case ReadModeElementType.description:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
