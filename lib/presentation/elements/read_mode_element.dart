@@ -17,7 +17,7 @@ class ReadModeElement {
   ReadModeElement(
       {this.id,
       this.text,
-      this.height =250,
+      this.height = 250,
       this.width = 250,
       this.child,
       this.imageUrl,
@@ -104,7 +104,13 @@ class ReadModeItem extends StatelessWidget {
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
           case ReadModeElementType.image:
-            return CachedNetworkImage(imageUrl: item.imageUrl!);
+            return Align(
+                alignment: Alignment.centerLeft,
+                child: CachedNetworkImage(
+                    imageUrl: item.imageUrl!,
+                    width: item.width,
+                    height: item.height,
+                    fit: BoxFit.cover));
           case ReadModeElementType.description:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
@@ -115,7 +121,7 @@ class ReadModeItem extends StatelessWidget {
             return Container(
               width: item.width,
               height: item.height,
-              alignment: Alignment.center,
+              alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: CachedNetworkImageProvider(item.imageUrl!),
