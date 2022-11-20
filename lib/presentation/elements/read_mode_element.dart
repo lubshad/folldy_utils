@@ -107,10 +107,9 @@ class ReadModeItem extends StatelessWidget {
             return Align(
                 alignment: Alignment.centerLeft,
                 child: CachedNetworkImage(
-                    imageUrl: item.imageUrl!,
-                    width: item.width,
-                    height: item.height,
-                    fit: BoxFit.fill));
+                  imageUrl: item.imageUrl!,
+                  width: item.width,
+                ));
           case ReadModeElementType.description:
             return Text("${item.text}",
                 style: item.readModeElementType.textStyle);
