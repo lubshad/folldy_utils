@@ -108,8 +108,8 @@ class ReadModeItem extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl!,
-                  width: MediaQuery.of(context).size.width > 500
-                      ? 500
+                  width: MediaQuery.of(context).size.width > 800
+                      ? 600
                       : item.width,
                 ));
           case ReadModeElementType.description:
