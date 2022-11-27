@@ -64,8 +64,9 @@ class RecordingScreenAppBar extends StatelessWidget {
                                   child: IconButton(
                                     padding: EdgeInsets.zero,
                                     onPressed: () {
-                                      SystemChrome.setPreferredOrientations(
-                                          [DeviceOrientation.landscapeRight]);
+                                      SystemChrome.setPreferredOrientations([
+                                        DeviceOrientation.landscapeRight
+                                      ]).then((value) => print("changed"));
                                     },
                                     // icon: SvgPicture.asset(
                                     //   "assets/svgs/readmode.svg",
