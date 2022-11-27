@@ -41,7 +41,7 @@ class PresentationItem extends StatelessWidget {
           nextPage: nextPage!,
         );
       case ElementType.landscapePage:
-        return LandscapePage(onTap: onTap!, item: item);
+        return LandscapePage(onTap: onTap!, item: item , onScreenTap: onScreenTap!);
       case ElementType.rectangle:
         return Container(
           decoration: BoxDecoration(
