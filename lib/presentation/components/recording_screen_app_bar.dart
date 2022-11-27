@@ -23,6 +23,14 @@ class RecordingScreenAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void tougleOrientation() {
+      if (MediaQuery.of(context).orientation == Orientation.landscape) {
+        SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+      } else {
+        SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+      }
+    }
+
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
@@ -48,7 +56,11 @@ class RecordingScreenAppBar extends StatelessWidget {
                                   height: defaultPaddingLarge,
                                   child: IconButton(
                                       padding: EdgeInsets.zero,
-                                      onPressed: minimize,
+                                      onPressed:
+                                          MediaQuery.of(context).orientation ==
+                                                  Orientation.landscape
+                                              ? tougleOrientation
+                                              : minimize,
                                       icon: const Icon(
                                         CupertinoIcons.chevron_down,
                                         color: Colors.white,
@@ -63,11 +75,7 @@ class RecordingScreenAppBar extends StatelessWidget {
                                   height: defaultPaddingLarge,
                                   child: IconButton(
                                     padding: EdgeInsets.zero,
-                                    onPressed: () {
-                                      SystemChrome.setPreferredOrientations([
-                                        DeviceOrientation.landscapeRight
-                                      ]).then((value) => print("changed"));
-                                    },
+                                    onPressed: tougleOrientation,
                                     // icon: SvgPicture.asset(
                                     //   "assets/svgs/readmode.svg",
                                     //   height: defaultPadding * 1.3,
