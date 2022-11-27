@@ -27,7 +27,7 @@ class RecordingScreenAppBar extends StatelessWidget {
       if (MediaQuery.of(context).orientation == Orientation.landscape) {
         SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
       } else {
-        SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+        SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
       }
     }
 
