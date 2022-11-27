@@ -1,6 +1,7 @@
 import 'package:basic_template/basic_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:folldy_utils/data/models/player_state.dart';
 import 'package:folldy_utils/utils/constants.dart';
 
@@ -54,6 +55,31 @@ class RecordingScreenAppBar extends StatelessWidget {
                                       )),
                                 )),
                             const Spacer(),
+                            ColorContainer(
+                                borderRadius: defaultPaddingLarge,
+                                color: opaqueBlack,
+                                child: SizedBox(
+                                  width: defaultPaddingLarge,
+                                  height: defaultPaddingLarge,
+                                  child: IconButton(
+                                    padding: EdgeInsets.zero,
+                                    onPressed: () {
+                                      SystemChrome.setPreferredOrientations(
+                                          [DeviceOrientation.landscapeRight]);
+                                    },
+                                    // icon: SvgPicture.asset(
+                                    //   "assets/svgs/readmode.svg",
+                                    //   height: defaultPadding * 1.3,
+                                    //   width: defaultPadding * 1.3,
+                                    // ),
+                                    icon: const Icon(
+                                      Icons.edit,
+                                      size: defaultPadding,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                )),
+                            defaultSpacerHorizontalSmall,
                             if (snapshot.data?.navigateToContentEditing != null)
                               ColorContainer(
                                   borderRadius: defaultPaddingLarge,
