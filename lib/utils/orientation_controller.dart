@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 
 class OrientationController extends ChangeNotifier {
   static OrientationController get i => Get.find();
-  DeviceOrientation orientation = DeviceOrientation.portraitUp;
-  changeOrientation(DeviceOrientation newOrientation) {
+  Orientation orientation = Orientation.portrait;
+  changeOrientation(Orientation newOrientation) {
     orientation = newOrientation;
     notifyListeners();
   }

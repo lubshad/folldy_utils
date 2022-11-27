@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:folldy_utils/data/models/player_state.dart';
 import 'package:folldy_utils/utils/constants.dart';
+import 'package:folldy_utils/utils/orientation_controller.dart';
 
 import 'color_container.dart';
 
@@ -26,8 +27,11 @@ class RecordingScreenAppBar extends StatelessWidget {
     void tougleOrientation() {
       if (MediaQuery.of(context).orientation == Orientation.landscape) {
         SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+        OrientationController.i.changeOrientation(Orientation.portrait);
       } else {
-        SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
+        SystemChrome.setPreferredOrientations(
+            [DeviceOrientation.landscapeRight]);
+        OrientationController.i.changeOrientation(Orientation.landscape);
       }
     }
 
