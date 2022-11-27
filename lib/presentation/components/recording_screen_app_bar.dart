@@ -73,7 +73,7 @@ class RecordingScreenAppBar extends StatelessWidget {
                                     //   width: defaultPadding * 1.3,
                                     // ),
                                     icon: const Icon(
-                                      Icons.edit,
+                                      Icons.screen_rotation_outlined,
                                       size: defaultPadding,
                                       color: Colors.white,
                                     ),
