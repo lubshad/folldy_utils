@@ -52,7 +52,8 @@ class RecordingScreenAppBar extends StatelessWidget {
                                       onPressed: minimize,
                                       icon: OrientationBuilder(
                                           builder: (context, orientation) {
-                                        print(orientation);
+                                        print(
+                                            MediaQuery.of(context).orientation);
                                         return Icon(
                                           orientation == Orientation.landscape
                                               ? CupertinoIcons.chevron_back
