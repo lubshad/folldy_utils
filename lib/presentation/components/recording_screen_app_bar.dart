@@ -50,10 +50,15 @@ class RecordingScreenAppBar extends StatelessWidget {
                                   child: IconButton(
                                       padding: EdgeInsets.zero,
                                       onPressed: minimize,
-                                      icon: const Icon(
-                                        CupertinoIcons.chevron_down,
-                                        color: Colors.white,
-                                      )),
+                                      icon: OrientationBuilder(
+                                          builder: (context, orientation) {
+                                        return Icon(
+                                          orientation == Orientation.landscape
+                                              ? CupertinoIcons.chevron_back
+                                              : CupertinoIcons.chevron_down,
+                                          color: Colors.white,
+                                        );
+                                      })),
                                 )),
                             const Spacer(),
                             if (tougleOrientation != null)
