@@ -155,19 +155,36 @@ class RecordingScreenAppBar extends StatelessWidget {
                                       )),
                                 )),
                             defaultSpacerHorizontalSmall,
+                            if (MediaQuery.of(context).orientation ==
+                                Orientation.landscape)
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    right: defaultPaddingSmall),
+                                child: CircleAvatar(
+                                  backgroundColor: altoGrey,
+                                  backgroundImage: profileUrl == null
+                                      ? null
+                                      : CachedNetworkImageProvider(profileUrl!,
+                                          maxHeight: 200, maxWidth: 200),
+                                  child: profileUrl == null
+                                      ? const Icon(Icons.person)
+                                      : null,
+                                ),
+                              )
                           ],
                         ),
                       ),
                     );
                   })),
-          CircleAvatar(
-            backgroundColor: altoGrey,
-            backgroundImage: profileUrl == null
-                ? null
-                : CachedNetworkImageProvider(profileUrl!,
-                    maxHeight: 200, maxWidth: 200),
-            child: profileUrl == null ? const Icon(Icons.person) : null,
-          )
+          if (MediaQuery.of(context).orientation == Orientation.portrait)
+            CircleAvatar(
+              backgroundColor: altoGrey,
+              backgroundImage: profileUrl == null
+                  ? null
+                  : CachedNetworkImageProvider(profileUrl!,
+                      maxHeight: 200, maxWidth: 200),
+              child: profileUrl == null ? const Icon(Icons.person) : null,
+            )
         ],
       ),
     );
