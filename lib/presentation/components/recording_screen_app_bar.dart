@@ -44,14 +44,15 @@ class RecordingScreenAppBar extends StatelessWidget {
                           PresentationMode.landscape.aspectRatio * height;
                       constraints = BoxConstraints(maxWidth: presentationWidth);
                     }
-                    return ConstrainedBox(
-                      constraints: constraints,
-                      child: AnimatedOpacity(
-                        opacity: snapshot.data?.isVisible == true ? 1 : 0,
-                        duration: defaultAnimationDuration,
-                        child: IgnorePointer(
-                          ignoring:
-                              snapshot.data?.isVisible == true ? false : true,
+                    print(constraints);
+                    return AnimatedOpacity(
+                      opacity: snapshot.data?.isVisible == true ? 1 : 0,
+                      duration: defaultAnimationDuration,
+                      child: IgnorePointer(
+                        ignoring:
+                            snapshot.data?.isVisible == true ? false : true,
+                        child: ConstrainedBox(
+                          constraints: constraints,
                           child: Row(
                             children: [
                               ColorContainer(
