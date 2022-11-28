@@ -28,6 +28,7 @@ class RecordingScreenAppBar extends StatelessWidget {
     Orientation orientation = MediaQuery.of(context).orientation;
     Size size = MediaQuery.of(context).size;
     return AppBar(
+      centerTitle: true,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       title: Builder(builder: (context) {
@@ -38,7 +39,6 @@ class RecordingScreenAppBar extends StatelessWidget {
               PresentationMode.landscape.aspectRatio * height;
           constraints = BoxConstraints(maxWidth: presentationWidth);
         }
-        print(constraints);
         return ConstrainedBox(
           constraints: constraints,
           child: Row(
