@@ -110,7 +110,7 @@ class ReadModeItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl!,
                   // width: kIsWeb ? 400 : item.width,
-                  width: item.width,
+                  // width: item.width,
                 ));
           case ReadModeElementType.description:
             return Text("${item.text}",
