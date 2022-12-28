@@ -109,6 +109,7 @@ class ReadModeItem extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl!,
+                  width: kIsWeb ? 400 : null,
                   // width: kIsWeb ? 400 : item.width,
                   // width: item.width,
                 ));
