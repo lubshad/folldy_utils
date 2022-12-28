@@ -1,4 +1,5 @@
 import 'package:basic_template/basic_template.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/presentation/elements/element_utils.dart';
 
@@ -108,9 +109,7 @@ class ReadModeItem extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: CachedNetworkImage(
                   imageUrl: item.imageUrl!,
-                  width: MediaQuery.of(context).size.width > 800
-                      ? 400
-                      : item.width,
+                  width: kIsWeb ? 400 : item.width,
                 ));
           case ReadModeElementType.description:
             return Text("${item.text}",
