@@ -65,21 +65,21 @@ extension ReadModeElementExtension on ReadModeElementType {
       case ReadModeElementType.title:
         return Theme.of(Get.context!)
             .textTheme
-            .headline6!
+            .titleLarge!
             .copyWith(fontSize: 18, fontFamily: GoogleFonts.tinos().fontFamily);
       case ReadModeElementType.image:
-        return Theme.of(Get.context!).textTheme.bodyText1!;
+        return Theme.of(Get.context!).textTheme.bodyLarge!;
       case ReadModeElementType.description:
         return Theme.of(Get.context!)
             .textTheme
-            .bodyText1!
+            .bodyLarge!
             .copyWith(fontFamily: GoogleFonts.tinos().fontFamily);
       case ReadModeElementType.heading:
-        return Theme.of(Get.context!).textTheme.headline6!.copyWith(
+        return Theme.of(Get.context!).textTheme.titleLarge!.copyWith(
             fontFamily: GoogleFonts.tinos().fontFamily,
             fontWeight: FontWeight.w600);
       case ReadModeElementType.element:
-        return Theme.of(Get.context!).textTheme.headline6!.copyWith(
+        return Theme.of(Get.context!).textTheme.titleLarge!.copyWith(
             fontFamily: GoogleFonts.tinos().fontFamily,
             fontWeight: FontWeight.w600);
     }

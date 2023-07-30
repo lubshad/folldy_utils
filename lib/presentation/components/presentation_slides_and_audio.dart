@@ -35,7 +35,7 @@ class PresentationSlidesAndAudio extends StatelessWidget {
                       presentation["totalSlides"].toString(),
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(color: Colors.white),
                     )
                   ],
@@ -62,7 +62,7 @@ class PresentationSlidesAndAudio extends StatelessWidget {
                           durationToMs(duration),
                           style: Theme.of(context)
                               .textTheme
-                              .caption!
+                              .bodySmall!
                               .copyWith(color: Colors.white),
                         );
                       })

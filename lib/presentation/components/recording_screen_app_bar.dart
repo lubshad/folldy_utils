@@ -150,7 +150,7 @@ class RecordingScreenAppBar extends StatelessWidget {
                                                   "$currentPage/$totalPages",
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .caption!
+                                                      .bodySmall!
                                                       .copyWith(
                                                           color: Colors.white));
                                             })),

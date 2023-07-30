@@ -4,9 +4,11 @@ class PresentationScreenArguments {
   final dynamic subject;
   final String name;
   final String? profileImage;
+  final int? module;
 
   PresentationScreenArguments(
       {required this.subject,
+      this.module,
       this.profileImage,
       required this.presentationId,
       required this.thumbnail,
@@ -14,6 +16,7 @@ class PresentationScreenArguments {
 
   factory PresentationScreenArguments.fromJson(Map<String, dynamic> json) {
     return PresentationScreenArguments(
+        module : json['module'], 
         profileImage: json["profileImage"],
         name: json["presentation"],
         subject: {"id": json["subjectId"], "name": ""},

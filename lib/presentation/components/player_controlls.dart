@@ -53,7 +53,7 @@ class PlayerControlls extends StatelessWidget {
                         durationToMs(playerState.elapsedDuration),
                         style: Theme.of(context)
                             .textTheme
-                            .caption!
+                            .bodySmall!
                             .copyWith(color: Colors.white),
                       )),
                   Positioned(
@@ -63,7 +63,7 @@ class PlayerControlls extends StatelessWidget {
                         durationToMs(playerState.totalDuration),
                         style: Theme.of(context)
                             .textTheme
-                            .caption!
+                            .bodySmall!
                             .copyWith(color: Colors.white),
                       )),
                 ],
@@ -88,7 +88,7 @@ class PlayerControlls extends StatelessWidget {
                               playerState.playbackSpeed.speedText,
                               style: Theme.of(context)
                                   .textTheme
-                                  .caption!
+                                  .bodySmall!
                                   .copyWith(color: Colors.white),
                             )),
                       ),

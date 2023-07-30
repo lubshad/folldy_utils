@@ -30,11 +30,11 @@ class SemesterListingBottomSheet extends StatelessWidget {
         children: [
           Stack(
             children: [
-              ListTile(
+              const ListTile(
                 dense: true,
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     ColorContainer(
                         child: SizedBox(
                       width: 100,
@@ -60,7 +60,7 @@ class SemesterListingBottomSheet extends StatelessWidget {
               children: [
                 Text(
                   "Select Semester",
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 GridView(
                   padding: const EdgeInsets.symmetric(vertical: defaultPadding),
