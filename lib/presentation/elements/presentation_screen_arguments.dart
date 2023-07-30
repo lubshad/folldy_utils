@@ -4,11 +4,11 @@ class PresentationScreenArguments {
   final dynamic subject;
   final String name;
   final String? profileImage;
-  final int? module;
+  final int module;
 
   PresentationScreenArguments(
       {required this.subject,
-      this.module,
+      required this.module,
       this.profileImage,
       required this.presentationId,
       required this.thumbnail,
