@@ -21,6 +21,6 @@ class PresentationScreenArguments {
         name: json["presentation"],
         subject: {"id": json["subjectId"], "name": ""},
         presentationId: json["id"],
-        thumbnail: json["thumbnail"]["portrait"]);
+        thumbnail: json["thumbnail"]);
   }
 }
