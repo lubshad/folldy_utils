@@ -10,7 +10,7 @@ class GetAllPagesArguments {
 
   Map<String, dynamic> toJson() => {
         'presentation_id': presentationId,
-        "updated_at": updatedAt
+        "updated_at": updatedAt.toIso8601String()
       };
 }
 
