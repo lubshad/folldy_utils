@@ -16,7 +16,7 @@ dependencies:
       url: https://github.com/lubshad/basic_template.git
   just_audio: ^0.9.21
   palette_generator: ^0.3.3+1
-  wakelock: 
+  # wakelock: any
 
 dev_dependencies:
   flutter_test:
