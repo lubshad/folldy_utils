@@ -16,7 +16,7 @@ class PresentationScreenArguments {
 
   factory PresentationScreenArguments.fromJson(Map<String, dynamic> json) {
     return PresentationScreenArguments(
-        module : json['module'], 
+        module : json["chapter"]['module'], 
         profileImage: json["profileImage"],
         name: json["presentation"],
         subject: {"id": json["subjectId"], "name": ""},
