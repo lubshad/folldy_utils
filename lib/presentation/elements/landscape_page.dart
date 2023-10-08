@@ -1,7 +1,6 @@
 import 'package:basic_template/basic_template.dart';
 import 'package:flutter/material.dart';
 import 'package:folldy_utils/presentation/elements/element_utils.dart';
-import 'package:folldy_utils/presentation/elements/portrait_page.dart';
 
 class LandscapePage extends StatelessWidget {
   const LandscapePage({
@@ -72,12 +71,12 @@ class LandscapeThumbnail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        // image: item["backgroundImage"] == null
-        //     ? null
-        //     : DecorationImage(
-        //         image: CachedNetworkImageProvider(item["backgroundImage"],
-        //             cacheManager: Get.find<CacheManager>()),
-        //         fit: BoxFit.values[item["fit"]]),
+        image: item["backgroundImage"] == null
+            ? null
+            : DecorationImage(
+                image: CachedNetworkImageProvider(item["backgroundImage"],
+                    cacheManager: Get.find<CacheManager>()),
+                fit: BoxFit.values[item["fit"]]),
         color: Color(item["color"]),
       ),
       height: item["height"],
@@ -86,13 +85,6 @@ class LandscapeThumbnail extends StatelessWidget {
         List<dynamic> items = item["items"];
         return Stack(
           children: [
-            if (item["backgroundImage"] != null)
-              Parallax(
-                  background: CachedNetworkImage(
-                imageUrl: item["backgroundImage"],
-                cacheManager: Get.find<CacheManager>(),
-                fit: BoxFit.values[item["fit"]],
-              )),
             ...items
                 .map((e) => Positioned(
                       top: e["top"],

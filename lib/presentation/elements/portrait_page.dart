@@ -84,13 +84,13 @@ class PortraitThumbnail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        // image: item["backgroundImage"] == null
-        //     ? null
-        //     : DecorationImage(
-        //         image: CachedNetworkImageProvider(item["backgroundImage"],
-        //             cacheManager: Get.find<CacheManager>()),
-        //         fit: BoxFit.values[item["fit"]],
-        //       ),
+        image: item["backgroundImage"] == null
+            ? null
+            : DecorationImage(
+                image: CachedNetworkImageProvider(item["backgroundImage"],
+                    cacheManager: Get.find<CacheManager>()),
+                fit: BoxFit.values[item["fit"]],
+              ),
         color: Color(item["color"]),
       ),
       height: item["height"],
@@ -98,13 +98,6 @@ class PortraitThumbnail extends StatelessWidget {
       child: Builder(builder: (context) {
         List<dynamic> items = item["items"];
         return Stack(children: [
-          if (item["backgroundImage"] != null)
-            Parallax(
-                background: CachedNetworkImage(
-              imageUrl: item["backgroundImage"],
-              cacheManager: Get.find<CacheManager>(),
-              fit: BoxFit.values[item["fit"]],
-            )),
           ...items
               .map((e) => Positioned(
                     top: e["top"],
