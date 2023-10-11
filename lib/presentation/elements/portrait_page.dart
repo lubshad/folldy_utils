@@ -118,11 +118,14 @@ class Parallax extends SingleChildRenderObjectWidget {
   const Parallax({
     super.key,
     required Widget background,
+    this.scrollable,
   }) : super(child: background);
+
+  final ScrollableState? scrollable;
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return RenderParallax(scrollable: Scrollable.of(context));
+    return RenderParallax(scrollable: scrollable ?? Scrollable.of(context));
   }
 
   @override
