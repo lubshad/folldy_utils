@@ -6,8 +6,7 @@ import 'package:folldy_utils/presentation/components/color_container.dart';
 import '../../../../utils/constants.dart';
 
 class PresentationSlidesAndAudio extends StatelessWidget {
-  const PresentationSlidesAndAudio({Key? key, this.presentation})
-      : super(key: key);
+  const PresentationSlidesAndAudio({super.key, this.presentation});
 
   final dynamic presentation;
 

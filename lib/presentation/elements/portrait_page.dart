@@ -14,14 +14,14 @@ Future<Color?> getImagePalette(ImageProvider imageProvider) async {
 
 class PortraitPage extends StatelessWidget {
   const PortraitPage({
-    Key? key,
+    super.key,
     required this.item,
     required this.onTap,
     required this.previousPage,
     required this.nextPage,
     required this.onLongPress,
     required this.onScreenTap,
-  }) : super(key: key);
+  });
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic> item) onTap;
   final VoidCallback previousPage;
@@ -54,19 +54,17 @@ class PortraitPage extends StatelessWidget {
               onLongPress: onLongPress,
             ),
           ),
-          ...items
-              .map((e) => Positioned(
-                  top: e["top"],
-                  left: e["left"],
-                  height: e["height"],
-                  width: e["width"],
-                  child: GestureDetector(
-                    onTap: e["hidden"] != true && e["topic"] == true
-                        ? () => onTap(e)
-                        : null,
-                    child: PresentationItem(item: e),
-                  )))
-              .toList(),
+          ...items.map((e) => Positioned(
+              top: e["top"],
+              left: e["left"],
+              height: e["height"],
+              width: e["width"],
+              child: GestureDetector(
+                onTap: e["hidden"] != true && e["topic"] == true
+                    ? () => onTap(e)
+                    : null,
+                child: PresentationItem(item: e),
+              ))),
         ]);
       }),
     );
@@ -75,9 +73,9 @@ class PortraitPage extends StatelessWidget {
 
 class PortraitThumbnail extends StatelessWidget {
   const PortraitThumbnail({
-    Key? key,
+    super.key,
     required this.item,
-  }) : super(key: key);
+  });
   final Map<String, dynamic> item;
 
   @override
@@ -98,16 +96,15 @@ class PortraitThumbnail extends StatelessWidget {
       child: Builder(builder: (context) {
         List<dynamic> items = item["items"];
         return Stack(children: [
-          ...items
-              .map((e) => Positioned(
-                    top: e["top"],
-                    left: e["left"],
-                    height: e["height"],
-                    width: e["width"],
-                    child: ThumbnailItem(item: e),
-                  ))
-              // )
-              .toList(),
+          ...items.map((e) => Positioned(
+                top: e["top"],
+                left: e["left"],
+                height: e["height"],
+                width: e["width"],
+                child: ThumbnailItem(item: e),
+              ))
+          // )
+          ,
         ]);
       }),
     );

@@ -8,13 +8,13 @@ import '../../utils/constants.dart';
 
 class RecordingControlls extends StatelessWidget {
   const RecordingControlls({
-    Key? key,
+    super.key,
     required this.startRecording,
     required this.stopRecording,
     required this.pauseRecording,
     required this.resumeRecording,
     required this.recordingState,
-  }) : super(key: key);
+  });
   final VoidCallback startRecording;
   final VoidCallback stopRecording;
   final VoidCallback pauseRecording;

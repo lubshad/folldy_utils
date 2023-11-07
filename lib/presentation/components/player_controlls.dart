@@ -7,7 +7,7 @@ import 'package:folldy_utils/utils/constants.dart';
 
 class PlayerControlls extends StatelessWidget {
   const PlayerControlls(
-      {Key? key,
+      {super.key,
       required this.play,
       required this.popupButton,
       required this.pause,
@@ -15,8 +15,7 @@ class PlayerControlls extends StatelessWidget {
       required this.skipBackward,
       required this.skipForward,
       required this.changePlaybackSpeed,
-      required this.seekToDuration})
-      : super(key: key);
+      required this.seekToDuration});
   final VoidCallback play;
   final VoidCallback pause;
   final VoidCallback skipForward;
@@ -134,8 +133,9 @@ class PlayerControlls extends StatelessWidget {
 
 class PlaybackSpeedSelection extends StatelessWidget {
   const PlaybackSpeedSelection(
-      {Key? key, required this.changePlaybackSpeed, required this.currentSpeed})
-      : super(key: key);
+      {super.key,
+      required this.changePlaybackSpeed,
+      required this.currentSpeed});
   final PlaybackSpeed currentSpeed;
   final Function(double) changePlaybackSpeed;
 
@@ -146,19 +146,17 @@ class PlaybackSpeedSelection extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          ...PlaybackSpeed.values
-              .map((speed) => ListTile(
-                    onTap: () {
-                      changePlaybackSpeed(speed.speed);
-                      Get.back();
-                    },
-                    dense: true,
-                    title: Text(speed.speedText),
-                    leading: currentSpeed == speed
-                        ? const Icon(CupertinoIcons.checkmark_alt)
-                        : null,
-                  ))
-              .toList(),
+          ...PlaybackSpeed.values.map((speed) => ListTile(
+                onTap: () {
+                  changePlaybackSpeed(speed.speed);
+                  Get.back();
+                },
+                dense: true,
+                title: Text(speed.speedText),
+                leading: currentSpeed == speed
+                    ? const Icon(CupertinoIcons.checkmark_alt)
+                    : null,
+              )),
           const Divider(),
           ListTile(
               onTap: Get.back,
@@ -172,10 +170,10 @@ class PlaybackSpeedSelection extends StatelessWidget {
 
 class CircleContainer extends StatelessWidget {
   const CircleContainer({
-    Key? key,
+    super.key,
     required this.child,
     this.color = opaqueBlack,
-  }) : super(key: key);
+  });
 
   final Color color;
   final Widget child;

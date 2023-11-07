@@ -11,7 +11,7 @@ import '../../../../utils/constants.dart';
 
 class MinimizedControlls extends StatelessWidget {
   const MinimizedControlls({
-    Key? key,
+    super.key,
     required this.minimized,
     required this.audioPlayerStateStream,
     required this.seekToDuration,
@@ -21,7 +21,7 @@ class MinimizedControlls extends StatelessWidget {
     required this.presentation,
     required this.touglePausePlay,
     required this.subject,
-  }) : super(key: key);
+  });
 
   final bool minimized;
   final Stream<AudioPlayerState> audioPlayerStateStream;

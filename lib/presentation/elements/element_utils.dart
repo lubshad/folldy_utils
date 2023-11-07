@@ -9,14 +9,13 @@ import 'landscape_page.dart';
 
 class PresentationItem extends StatelessWidget {
   const PresentationItem(
-      {Key? key,
+      {super.key,
       required this.item,
       this.onTap,
       this.previousPage,
       this.onScreenTap,
       this.onLongPress,
-      this.nextPage})
-      : super(key: key);
+      this.nextPage});
 
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic> item)? onTap;
@@ -41,7 +40,8 @@ class PresentationItem extends StatelessWidget {
           nextPage: nextPage!,
         );
       case ElementType.landscapePage:
-        return LandscapePage(onTap: onTap!, item: item , onScreenTap: onScreenTap!);
+        return LandscapePage(
+            onTap: onTap!, item: item, onScreenTap: onScreenTap!);
       case ElementType.rectangle:
         return Container(
           decoration: BoxDecoration(
@@ -65,9 +65,9 @@ class PresentationItem extends StatelessWidget {
 
 class ThumbnailItem extends StatelessWidget {
   const ThumbnailItem({
-    Key? key,
+    super.key,
     required this.item,
-  }) : super(key: key);
+  });
 
   final Map<String, dynamic> item;
 

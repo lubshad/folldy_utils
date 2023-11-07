@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
 
 import '../../utils/constants.dart';
 
 class ColorContainer extends StatelessWidget {
   const ColorContainer({
-    Key? key,
+    super.key,
     this.color = altoGrey,
     this.borderWidth,
     this.borderRadius = defaultPaddingTiny,
     required this.child,
-  }) : super(key: key);
+  });
   final Widget child;
   final Color color;
   final double borderRadius;

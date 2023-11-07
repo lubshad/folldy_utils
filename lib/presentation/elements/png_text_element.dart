@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:folldy_utils/presentation/elements/element_utils.dart';
 
 class PngTextElement extends StatelessWidget {
-  const PngTextElement({Key? key, required this.item}) : super(key: key);
+  const PngTextElement({super.key, required this.item});
   final Map<String, dynamic> item;
 
   @override
@@ -43,8 +43,7 @@ class PngTextElement extends StatelessWidget {
 class GalleryImageElement extends StatelessWidget {
   final Map<String, dynamic> item;
 
-  const GalleryImageElement({Key? key, required this.item, required})
-      : super(key: key);
+  const GalleryImageElement({super.key, required this.item, required});
 
   @override
   Widget build(BuildContext context) {
@@ -96,8 +95,7 @@ class GalleryImageElement extends StatelessWidget {
 }
 
 class PngTextElementThumbnail extends StatelessWidget {
-  const PngTextElementThumbnail({Key? key, required this.item})
-      : super(key: key);
+  const PngTextElementThumbnail({super.key, required this.item});
   final Map<String, dynamic> item;
 
   @override

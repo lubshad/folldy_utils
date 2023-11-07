@@ -88,9 +88,9 @@ extension ReadModeElementExtension on ReadModeElementType {
 
 class ReadModeItem extends StatelessWidget {
   const ReadModeItem({
-    Key? key,
+    super.key,
     required this.item,
-  }) : super(key: key);
+  });
 
   final ReadModeElement item;
 

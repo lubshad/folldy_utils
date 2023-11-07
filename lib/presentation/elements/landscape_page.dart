@@ -4,11 +4,11 @@ import 'package:folldy_utils/presentation/elements/element_utils.dart';
 
 class LandscapePage extends StatelessWidget {
   const LandscapePage({
-    Key? key,
+    super.key,
     required this.item,
     required this.onTap,
     required this.onScreenTap,
-  }) : super(key: key);
+  });
 
   final Map<String, dynamic> item;
   final Function(Map<String, dynamic>) onTap;
@@ -42,19 +42,17 @@ class LandscapePage extends StatelessWidget {
                 onTap: onScreenTap,
               ),
             ),
-            ...items
-                .map((e) => Positioned(
-                    top: e["top"],
-                    left: e["left"],
-                    height: e["height"],
-                    width: e["width"],
-                    child: GestureDetector(
-                      onTap: e["hidden"] != true && e["topic"] == true
-                          ? () => onTap(e)
-                          : null,
-                      child: PresentationItem(item: e, onTap: onTap),
-                    )))
-                .toList()
+            ...items.map((e) => Positioned(
+                top: e["top"],
+                left: e["left"],
+                height: e["height"],
+                width: e["width"],
+                child: GestureDetector(
+                  onTap: e["hidden"] != true && e["topic"] == true
+                      ? () => onTap(e)
+                      : null,
+                  child: PresentationItem(item: e, onTap: onTap),
+                )))
           ],
         );
       }),
@@ -63,7 +61,7 @@ class LandscapePage extends StatelessWidget {
 }
 
 class LandscapeThumbnail extends StatelessWidget {
-  const LandscapeThumbnail({Key? key, required this.item}) : super(key: key);
+  const LandscapeThumbnail({super.key, required this.item});
 
   final Map<String, dynamic> item;
 
@@ -85,15 +83,13 @@ class LandscapeThumbnail extends StatelessWidget {
         List<dynamic> items = item["items"];
         return Stack(
           children: [
-            ...items
-                .map((e) => Positioned(
-                      top: e["top"],
-                      left: e["left"],
-                      height: e["height"],
-                      width: e["width"],
-                      child: ThumbnailItem(item: e),
-                    ))
-                .toList()
+            ...items.map((e) => Positioned(
+                  top: e["top"],
+                  left: e["left"],
+                  height: e["height"],
+                  width: e["width"],
+                  child: ThumbnailItem(item: e),
+                ))
           ],
         );
       }),

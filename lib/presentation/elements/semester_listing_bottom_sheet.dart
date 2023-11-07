@@ -6,11 +6,11 @@ import '../../utils/constants.dart';
 
 class SemesterListingBottomSheet extends StatelessWidget {
   const SemesterListingBottomSheet({
-    Key? key,
+    super.key,
     required this.semesters,
     required this.onTap,
     required this.currentIndex,
-  }) : super(key: key);
+  });
 
   final List semesters;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppLogo extends StatelessWidget {
-  const AppLogo({Key? key, this.white = true}) : super(key: key);
+  const AppLogo({super.key, this.white = true});
 
   final bool white;
 

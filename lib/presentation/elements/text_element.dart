@@ -3,9 +3,9 @@ import 'package:folldy_utils/utils/extensions.dart';
 
 class TextElementPresnetation extends StatelessWidget {
   const TextElementPresnetation({
-    Key? key,
+    super.key,
     this.text,
-  }) : super(key: key);
+  });
 
   final dynamic text;
 
@@ -38,4 +38,3 @@ class TextElementPresnetation extends StatelessWidget {
     );
   }
 }
-
