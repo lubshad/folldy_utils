@@ -1,7 +1,7 @@
 name: folldy_utils
 description: A new Flutter package project.
 publish_to: none
-version: 0.0.2
+version: 0.0.3
 homepage:
 
 environment:
@@ -14,6 +14,7 @@ dependencies:
   basic_template: 
     git:
       url: https://github.com/lubshad/basic_template.git
+    # path: ../basic_template/
   just_audio: ^0.9.21
   palette_generator: ^0.3.3+1
   # wakelock: any
