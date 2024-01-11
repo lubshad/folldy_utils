@@ -14,12 +14,12 @@ class Institution {
   Institution({
     // required this.university,
     required this.name,
-    required this.id,
+    this.id,
   });
 
   String name;
   // int university;
-  int id;
+  int? id;
 
   factory Institution.fromJson(Map<String, dynamic> json) => Institution(
         // university: json["university"],
