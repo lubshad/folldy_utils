@@ -2,7 +2,11 @@
 //
 //     final university = universityFromJson(jsonString);
 
+// ignore_for_file: must_be_immutable
+
 import 'dart:convert';
+
+import 'package:basic_template/basic_template.dart';
 
 List<Institution> institutionFromJson(dynamic str) =>
     List<Institution>.from(str.map((x) => Institution.fromJson(x)));
@@ -10,7 +14,7 @@ List<Institution> institutionFromJson(dynamic str) =>
 String institutionToJson(List<Institution> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Institution {
+class Institution extends Equatable {
   Institution({
     // required this.university,
     required this.name,
@@ -32,4 +36,7 @@ class Institution {
         "id": id,
         // "university": university,
       };
+
+  @override
+  List<Object?> get props => [id];
 }
