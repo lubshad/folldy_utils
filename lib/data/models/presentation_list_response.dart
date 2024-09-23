@@ -35,7 +35,9 @@ class Presentation {
         module: json["module"],
         displayOrder: json["displayOrder"],
         // areas: areaListResponseFromJson(json["areas"]),
-        tags: List<String>.from(json["tags"].map((x) => x)),
+        tags: json["tags"] == null
+            ? []
+            : List<String>.from(json["tags"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
